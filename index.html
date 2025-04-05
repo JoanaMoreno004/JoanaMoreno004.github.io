@@ -1,32 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My work</title>
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Joana Moreno - Portfolio</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=ABC+Favorit+Cyrillic+Unlicensed+Trial&display=swap"
+    />
+    <style>
+      body {
+        font-family: 'ABC Favorit Cyrillic Unlicensed Trial', sans-serif;
+        background-color: #f9b7ff; /* Pink Background */
+        margin: 0;
+        padding: 0;
+        color: #000; /* Black Text */
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
 
-<body>
-    <header>
-        <h1><a href="index.html" target="_self">Home</a></h1>
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+      }
 
-        </nav>
-            <ul>
-                <li><a href="about.html" target="_self">About me</a></li>
-                <li><a href="contact.html" target="_self">Contacts</a></li>
-                <li><a href="work.html" target="_self">My work</a></li>
-            </ul>
-        </nav>
+      .name {
+        font-size: 1.2em; /* Slightly smaller name */
+      }
+
+      .nav {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+      }
+
+      .nav li {
+        margin-left: 20px;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: #000;
+        font-weight: normal;
+        font-size: 0.9em; /* Smaller links */
+      }
+
+      .content {
+        padding: 20px;
+        font-size: 3em; /* Larger main text */
+        line-height: 1.1; /* Adjust line height for better readability */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <div class="name">Joana Moreno</div>
+      <nav>
+        <ul class="nav">
+          <li><a href="#">Work</a></li>
+          <li><a href="#">CV</a></li>
+          <li><a href="#">Contacts</a></li>
+        </ul>
+      </nav>
     </header>
-
-    <main>
-        
-    </main>
-
-    <footer>
-        <p>Direitos autor</p>
-    </footer>
-</body>
-
+    <div class="content">
+      Hi! I’m Joana, a designer based in Portugal, dedicated to Graphic Design, Illustration and Motion Graphics.
+    </div>
+  </body>
 </html>
