@@ -2,73 +2,143 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Work Page – Joana</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joana Moreno – Portfolio</title>
+
   <style>
-    body {
-      background: #FCFCF7;
-      font-family: sans-serif;
-      padding: 40px;
+    @font-face {
+      font-family: 'ABCFavoritCyrillic';
+      src: url('./ABCFavoritCyrillic-Light-Trial.woff2') format('woff2'),
+           url('./ABCFavoritCyrillic-Light-Trial.woff') format('woff');
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
     }
 
-    .work-title {
-      margin-bottom: 20px;
-      font-size: 24px;
-      cursor: pointer;
+    @font-face {
+      font-family: 'ABCFavoritCyrillic';
+      src: url('./ABCFavoritCyrillic-Medium-Trial.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
     }
 
-    #preview {
-      position: fixed;
-      display: none;
-      width: 300px;
-      z-index: 9999;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      pointer-events: none;
+    @font-face {
+      font-family: 'ABCFavoritCyrillic';
+      src: url('./ABCFavoritCyrillic-Bold-Trial.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #E68EC7;
+      font-family: 'ABCFavoritCyrillic', sans-serif;
       overflow: hidden;
     }
 
-    #preview video {
-      width: 100%;
-      height: auto;
-      display: block;
+    #scale-wrapper {
+      width: 1440px;
+      height: 900px;
+      transform-origin: top left;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+
+    .container {
+      box-sizing: border-box;
+      padding: 48px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 300;
+      font-size: 22px;
+      color: #1D1B1B;
+    }
+
+    .logo {
+      display: flex;
+      gap: 8px;
+      font-weight: 300;
+    }
+
+    .links a {
+      margin-left: 24px;
+      text-decoration: none;
+      color: #1D1B1B;
+      font-weight: 300;
+    }
+
+    .intro {
+      display: flex;
+      align-items: center;
+      margin-top: 20px;
+    }
+
+    .intro h1 {
+      font-size: 71px;
+      font-weight: 500;
+      line-height: 70px;
+      margin: 0;
+      color: #1D1B1B;
+      letter-spacing: -0.02em;
+      max-width: 100%;
     }
   </style>
 </head>
 <body>
 
-  <div class="work-title" data-preview="test.mp4">Animated PostCard</div>
-  <div class="work-title" data-preview="test.mp4">3D Animation</div>
+  <div id="scale-wrapper">
+    <div class="container">
 
-  <div id="preview">
-    <video autoplay muted loop playsinline></video>
+      <!-- NAV -->
+      <nav>
+        <div class="logo">
+          <span>✉️</span>
+          <span>Joana Moreno</span>
+        </div>
+        <div class="links">
+          <a href="work.html">Work</a>
+          <a href="#cv">CV</a>
+          <a href="#contacts">Contacts</a>
+        </div>
+      </nav>
+
+      <!-- INTRO -->
+      <div class="intro">
+        <h1>
+          Hi! I’m Joana, a designer based in Portugal, dedicated to Graphic Design, Illustration and Motion Graphics.
+        </h1>
+      </div>
+
+    </div>
   </div>
 
   <script>
-    const preview = document.getElementById('preview');
-    const video = preview.querySelector('video');
-    const items = document.querySelectorAll('.work-title');
+    const wrapper = document.getElementById('scale-wrapper');
+    const baseWidth = 1440;
+    const baseHeight = 900;
 
-    items.forEach(item => {
-      item.addEventListener('mouseenter', () => {
-        const file = item.dataset.preview;
-        video.src = `previews/${file}`;
-        preview.style.display = 'block';
-      });
+    function scaleLayout() {
+      const scaleX = window.innerWidth / baseWidth;
+      const scaleY = window.innerHeight / baseHeight;
+      const scale = Math.min(scaleX, scaleY);
+      wrapper.style.transform = `scale(${scale})`;
+    }
 
-      item.addEventListener('mousemove', e => {
-        preview.style.left = `${e.pageX + 20}px`;
-        preview.style.top = `${e.pageY - 100}px`;
-      });
-
-      item.addEventListener('mouseleave', () => {
-        preview.style.display = 'none';
-        video.pause();
-        video.src = '';
-      });
-    });
+    window.addEventListener('resize', scaleLayout);
+    window.addEventListener('load', scaleLayout);
   </script>
 
 </body>
 </html>
-
 

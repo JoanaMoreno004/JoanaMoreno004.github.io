@@ -12,6 +12,7 @@
       font-family: sans-serif;
       background-color: #FCFCF7;
       color: #1D1B1B;
+      cursor: default;
     }
 
     body {
@@ -48,12 +49,29 @@
       font-size: 20px;
     }
 
-    .work-list b {
-      font-weight: 700;
+    .work-title {
+      font-weight: 500;
+      cursor: pointer;
+      position: relative;
     }
 
-    .work-list div {
-      padding: 4px 0;
+    /* Preview container */
+    #preview {
+      position: fixed;
+      display: none;
+      pointer-events: none;
+      width: 300px;
+      height: auto;
+      z-index: 1000;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    #preview video {
+      width: 100%;
+      height: auto;
+      display: block;
     }
   </style>
 </head>
@@ -74,30 +92,61 @@
 
   <!-- WORK LIST -->
   <div class="work-list">
-    <div><b>Animated PostCard</b></div>
+    <div class="work-title" data-preview="animated-postcard.mp4"><b>Animated PostCard</b></div>
     <div>Graphic, motion, illustration</div>
     <div>2023</div>
 
-    <div>3D Animation</div>
+    <div class="work-title" data-preview="3d-animation.mp4">3D Animation</div>
     <div>3D, Motion</div>
     <div>2022</div>
 
-    <div>Spotify Canvas</div>
+    <div class="work-title" data-preview="spotify-canvas.mp4">Spotify Canvas</div>
     <div>Motion, illustration</div>
     <div>2024</div>
 
-    <div>IndieLisboa Festival</div>
+    <div class="work-title" data-preview="indielisboa-festival.mp4">IndieLisboa Festival</div>
     <div>Graphic, Motion, illustration</div>
     <div>2025</div>
 
-    <div>Event ARTSIDE</div>
+    <div class="work-title" data-preview="event-artside.mp4">Event ARTSIDE</div>
     <div>Graphic, motion, illustration</div>
     <div>2022</div>
 
-    <div>APP Hi!There</div>
+    <div class="work-title" data-preview="app-hi-there.mp4">APP Hi!There</div>
     <div>Graphic, motion, illustration</div>
     <div>2023</div>
   </div>
+
+  <!-- PREVIEW ELEMENT -->
+  <div id="preview">
+    <video muted autoplay loop></video>
+  </div>
+
+  <!-- SCRIPT -->
+  <script>
+    const previewBox = document.getElementById('preview');
+    const video = previewBox.querySelector('video');
+    const titles = document.querySelectorAll('.work-title');
+
+    titles.forEach(title => {
+      title.addEventListener('mouseenter', (e) => {
+        const src = title.getAttribute('data-preview');
+        video.src = `previews/${src}`;
+        previewBox.style.display = 'block';
+      });
+
+      title.addEventListener('mousemove', (e) => {
+        previewBox.style.left = `${e.pageX + 20}px`;
+        previewBox.style.top = `${e.pageY - 100}px`;
+      });
+
+      title.addEventListener('mouseleave', () => {
+        previewBox.style.display = 'none';
+        video.pause();
+        video.src = '';
+      });
+    });
+  </script>
 
 </body>
 </html>
