@@ -1,75 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Work Page – Joana</title>
+  <style>
+    body {
+      background: #FCFCF7;
+      font-family: sans-serif;
+      padding: 40px;
+    }
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joana Moreno - Portfolio</title>
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=ABC+Favorit+Cyrillic+Unlicensed+Trial&display=swap"
-    />
-    <style>
-      body {
-        font-family: 'ABC Favorit Cyrillic Unlicensed Trial', sans-serif;
-        background-color: #f9b7ff; /* Pink Background */
-        margin: 0;
-        padding: 0;
-        color: #000; /* Black Text */
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-      }
+    .work-title {
+      margin-bottom: 20px;
+      font-size: 24px;
+      cursor: pointer;
+    }
 
-      .header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px;
-      }
+    #preview {
+      position: fixed;
+      display: none;
+      width: 300px;
+      z-index: 9999;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      pointer-events: none;
+      overflow: hidden;
+    }
 
-      .name {
-        font-size: 1.2em; /* Slightly smaller name */
-      }
+    #preview video {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
 
-      .nav {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        display: flex;
-      }
+  <div class="work-title" data-preview="test.mp4">Animated PostCard</div>
+  <div class="work-title" data-preview="test.mp4">3D Animation</div>
 
-      .nav li {
-        margin-left: 20px;
-      }
+  <div id="preview">
+    <video autoplay muted loop playsinline></video>
+  </div>
 
-      .nav a {
-        text-decoration: none;
-        color: #000;
-        font-weight: normal;
-        font-size: 0.9em; /* Smaller links */
-      }
+  <script>
+    const preview = document.getElementById('preview');
+    const video = preview.querySelector('video');
+    const items = document.querySelectorAll('.work-title');
 
-      .content {
-        padding: 20px;
-        font-size: 3em; /* Larger main text */
-        line-height: 1.1; /* Adjust line height for better readability */
-      }
-    </style>
-  </head>
-  <body>
-    <header class="header">
-      <div class="name">Joana Moreno</div>
-      <nav>
-        <ul class="nav">
-          <li><a href="#">Work</a></li>
-          <li><a href="#">CV</a></li>
-          <li><a href="#">Contacts</a></li>
-        </ul>
-      </nav>
-    </header>
-    <div class="content">
-      Hi! I’m Joana, a designer based in Portugal, dedicated to Graphic Design, Illustration and Motion Graphics.
-    </div>
-  </body>
+    items.forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        const file = item.dataset.preview;
+        video.src = `previews/${file}`;
+        preview.style.display = 'block';
+      });
+
+      item.addEventListener('mousemove', e => {
+        preview.style.left = `${e.pageX + 20}px`;
+        preview.style.top = `${e.pageY - 100}px`;
+      });
+
+      item.addEventListener('mouseleave', () => {
+        preview.style.display = 'none';
+        video.pause();
+        video.src = '';
+      });
+    });
+  </script>
+
+</body>
 </html>
+
+
