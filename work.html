@@ -3,151 +3,74 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joana Moreno – Work</title>
-
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-family: sans-serif;
-      background-color: #FCFCF7;
-      color: #1D1B1B;
-      cursor: default;
-    }
-
-    body {
-      font-family: 'ABCFavoritCyrillic', sans-serif;
-      padding: 48px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: space-between;
-      font-size: 20px;
-      margin-bottom: 64px;
-    }
-
-    .logo {
-      display: flex;
-      gap: 8px;
-    }
-
-    .links a {
-      margin-left: 24px;
-      text-decoration: none;
-      color: #1D1B1B;
-    }
-
-    .links a:first-child {
-      color: #E68EC7;
-    }
-
-    .work-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr 100px;
-      row-gap: 24px;
-      font-size: 20px;
-    }
-
-    .work-title {
-      font-weight: 500;
-      cursor: pointer;
-      position: relative;
-    }
-
-    /* Preview container */
-    #preview {
-      position: fixed;
-      display: none;
-      pointer-events: none;
-      width: 300px;
-      height: auto;
-      z-index: 1000;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    #preview video {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-  </style>
+  <title>Joana Moreno Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <div class="logo">
-      <span>✉️</span>
-      <span>Joana Moreno</span>
-    </div>
-    <div class="links">
-      <a href="work.html">Work</a>
-      <a href="#cv">CV</a>
-      <a href="#contacts">Contacts</a>
-    </div>
-  </nav>
-
-  <!-- WORK LIST -->
-  <div class="work-list">
-    <div class="work-title" data-preview="animated-postcard.mp4"><b>Animated PostCard</b></div>
-    <div>Graphic, motion, illustration</div>
-    <div>2023</div>
-
-    <div class="work-title" data-preview="3d-animation.mp4">3D Animation</div>
-    <div>3D, Motion</div>
-    <div>2022</div>
-
-    <div class="work-title" data-preview="spotify-canvas.mp4">Spotify Canvas</div>
-    <div>Motion, illustration</div>
-    <div>2024</div>
-
-    <div class="work-title" data-preview="indielisboa-festival.mp4">IndieLisboa Festival</div>
-    <div>Graphic, Motion, illustration</div>
-    <div>2025</div>
-
-    <div class="work-title" data-preview="event-artside.mp4">Event ARTSIDE</div>
-    <div>Graphic, motion, illustration</div>
-    <div>2022</div>
-
-    <div class="work-title" data-preview="app-hi-there.mp4">APP Hi!There</div>
-    <div>Graphic, motion, illustration</div>
-    <div>2023</div>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <a href="index.html">Joana Moreno</a>
+      </div>
+      <nav class="links">
+        <a href="work.html">Work</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+      </nav>
+    </header>
+    <main>
+      <section class="projects">
+        <div class="project">
+          <h2 class="distressed">Animated Postcard</h2>
+          <div class="project-info">
+            <span class="year">2024</span>
+            <p class="category">Illustration<br>Motion Graphics</p>
+          </div>
+        </div>
+        <div class="project">
+          <h2 class="distressed">Spotify Canvas</h2>
+          <div class="project-info">
+            <span class="year">2024</span>
+            <p class="category">Illustration<br>Motion Graphics</p>
+          </div>
+        </div>
+        <div class="project">
+          <h2 class="distressed">Manifest Zine</h2>
+          <div class="project-info">
+            <span class="year">2025</span>
+            <p class="category">Illustration<br>Graphic Design</p>
+          </div>
+        </div>
+        <div class="project">
+          <h2 class="distressed">3D Animation</h2>
+          <div class="project-info">
+            <span class="year">2025</span>
+            <p class="category">Motion Graphics</p>
+          </div>
+        </div>
+        <div class="project">
+          <h2 class="distressed">HiThere! APP</h2>
+          <div class="project-info">
+            <span class="year">2024</span>
+            <p class="category">UI/UX<br>APP Design</p>
+          </div>
+        </div>
+        <div class="project">
+          <h2 class="distressed">ArtSide Event</h2>
+          <div class="project-info">
+            <span class="year">2023</span>
+            <p class="category">Graphic Design</p>
+          </div>
+        </div>
+        <div class="project">
+          <h2 class="distressed">IndieLisboa Festival</h2>
+          <div class="project-info">
+            <span class="year">2025</span>
+            <p class="category">Graphic Design<br>Motion Graphics</p>
+          </div>
+        </div>
+      </section>
+    </main>
   </div>
-
-  <!-- PREVIEW ELEMENT -->
-  <div id="preview">
-    <video muted autoplay loop></video>
-  </div>
-
-  <!-- SCRIPT -->
-  <script>
-    const previewBox = document.getElementById('preview');
-    const video = previewBox.querySelector('video');
-    const titles = document.querySelectorAll('.work-title');
-
-    titles.forEach(title => {
-      title.addEventListener('mouseenter', (e) => {
-        const src = title.getAttribute('data-preview');
-        video.src = `previews/${src}`;
-        previewBox.style.display = 'block';
-      });
-
-      title.addEventListener('mousemove', (e) => {
-        previewBox.style.left = `${e.pageX + 20}px`;
-        previewBox.style.top = `${e.pageY - 100}px`;
-      });
-
-      title.addEventListener('mouseleave', () => {
-        previewBox.style.display = 'none';
-        video.pause();
-        video.src = '';
-      });
-    });
-  </script>
-
 </body>
 </html>
-
