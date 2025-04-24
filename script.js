@@ -1,3 +1,4 @@
+// script.js
 const preview = document.getElementById('project-preview');
 const projects = document.querySelectorAll('.project');
 
