@@ -322,12 +322,12 @@ body.home h1 .distressed {
 .contact-details li {
   margin-top: 8px;
   margin-bottom: 0.5em;
-  a
+  
 }
 
 /* Style the CV text */
 .contact-text a {
-  margin-top: rem;
+
   font-size: 0.9rem;
   display: block;
 }
