@@ -42,7 +42,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1.3rem;
   box-sizing: border-box;
   position: fixed;
   top: 0;
@@ -51,26 +51,26 @@ header {
   background: transparent;
 }
 .logo a{
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #222;
   text-decoration: none;
-  font-size: normal;
+  font-weight: 0;
 }
 
 nav.links {
   display: flex;
-  gap: 1.2rem;
+  gap: 1.3rem;
 }
 
 nav.links a {
-  font-size: 0.8rem;
+  font-size: 1.1rem;
   color: #222;
   text-decoration: none;
   transition: color 0.2s;
 }
 
-nav.links a:hover {
-  color: #666;
+/*nav.links a:hover {
+  font-size: 1.12rem;
 }
 
 /* === PROJECTS (WORK PAGE) === */
@@ -78,44 +78,33 @@ nav.links a:hover {
   width: 100%;
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  gap: 0.rem;
 }
 
 .project {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #ddd;
-  min-height: 3rem;
+  display:flexbox
+}
+
+.year {
+  text-align: left;
+  font-size: 1.2rem;
 }
 
 .distressed {
   font-family: 'BaleteSemibold', serif;
-  font-size: 4rem;
+  font-size: 5rem;
   color: #222;
-  line-height: 1.2;
+  line-height: 0.9;
+  text-align: left;
+  
 }
 
-.distressed a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.project-info {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.year, .category {
-  font-size: 0.7rem;
-  color: #777;
-}
 
 .category {
-  color: #555;
-  text-align: right;
+  font-size: 1.1rem;
+  text-align: left;
 }
+
 
 /* === PROJECT PREVIEW === */
 #project-preview {
@@ -151,10 +140,14 @@ body.home {
 }
 
 body.home h1 {
-  font-size: 2.5rem;
+  font-size: 3.8762rem;
   font-weight: 400;
+  line-height: 1.1;
   color: #222;
   margin: 0;
+  margin-top: 420px;
+  margin-bottom: 20px;
+
 }
 
 body.home .bio {
@@ -210,26 +203,4 @@ body.home .bio {
   font-style: normal;
 }
 
-/* === MEDIA QUERIES === */
-@media (max-width: 768px) {
-  header {
-    padding: 0.5rem;
-  }
-  .logo a {
-    font-size: 0.8rem;
-  }
-  nav.links a {
-    font-size: 0.7rem;
-  }
-  .project {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .project-info {
-    align-items: flex-start;
-  }
-  .year, .category {
-    text-align: left;
-  }
-}
+
