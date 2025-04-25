@@ -1,48 +1,30 @@
-/* style.css */
-
-/* Project Detail Page Styles */
-.project-detail-main {
+/* === UNIVERSAL 12-COLUMN GRID FOR MAIN CONTENT === */
+main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
   width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align to the left */
-  justify-content: flex-start;
-  padding: 1rem; /* Use same padding as homepage */
   box-sizing: border-box;
+  padding: 1rem;
+  margin-top: 4rem;
+}
+.grid-span-12 { grid-column: 1 / span 12; }
+.grid-span-10 { grid-column: 2 / span 10; }
+.grid-span-8  { grid-column: 3 / span 8; }
+.grid-span-6  { grid-column: 4 / span 6; }
+.grid-span-4  { grid-column: 5 / span 4; }
+@media (max-width: 900px) {
+  main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  main > * {
+    grid-column: 1 / -1 !important;
+  }
 }
 
-.project-detail {
-  margin-top: 3rem; /* Add margin to align content below header */
-  width: 70%; /* Adjust width for comfortable reading */
-}
-
-.project-detail h1.distressed {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-}
-
-.project-detail .project-info {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-}
-
-.project-detail .project-info .year {
-  font-size: 0.8rem;
-  color: #777;
-}
-
-.project-detail .project-info .category {
-  font-size: 0.8rem;
-  color: #555;
-}
-
-.project-detail .description {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #333;
-}
+/* === GENERAL STYLES === */
 body {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
   margin: 0;
@@ -50,16 +32,9 @@ body {
   min-height: 100vh;
 }
 
-/* Work page background fix */
-body:not(.home) {
-  background: #f8f8f2;
-}
-
 .container {
   width: 100%;
   min-height: 100vh;
-  margin: 0;
-  padding: 0;
 }
 
 header {
@@ -73,16 +48,13 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  background: transparent; /* Ensures header has no background */
-  box-shadow: none;
-  border: none;
+  background: transparent;
 }
-
-.logo a {
+.logo a{
   font-size: 0.9rem;
   color: #222;
   text-decoration: none;
-  font-weight: normal;
+  font-size: normal;
 }
 
 nav.links {
@@ -94,7 +66,6 @@ nav.links a {
   font-size: 0.8rem;
   color: #222;
   text-decoration: none;
-  font-weight: normal;
   transition: color 0.2s;
 }
 
@@ -102,20 +73,7 @@ nav.links a:hover {
   color: #666;
 }
 
-/* Work page styles */
-main.work-page {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align to the left */
-  justify-content: flex-start;
-  padding: 1rem; /* Use same padding as homepage */
-  box-sizing: border-box;
-  background: none; /* Remove background here, handled by body */
-  margin-top: 3rem; /* Add margin to align content below header */
-}
-
+/* === PROJECTS (WORK PAGE) === */
 .projects {
   width: 100%;
   display: flex;
@@ -129,18 +87,14 @@ main.work-page {
   align-items: center;
   padding: 0.75rem 0;
   border-bottom: 1px solid #ddd;
-  width: 100%;
-  box-sizing: border-box;
   min-height: 3rem;
 }
 
 .distressed {
   font-family: 'BaleteSemibold', serif;
   font-size: 4rem;
-  font-weight: normal;
   color: #222;
   line-height: 1.2;
-  text-decoration: none;
 }
 
 .distressed a {
@@ -153,21 +107,17 @@ main.work-page {
   flex-direction: column;
   align-items: flex-end;
 }
-
-.year {
+.year, .category {
   font-size: 0.7rem;
   color: #777;
-  white-space: nowrap;
-  margin-bottom: 0.2rem;
 }
 
 .category {
-  font-size: 0.7rem;
   color: #555;
-  white-space: pre-line;
   text-align: right;
 }
 
+/* === PROJECT PREVIEW === */
 #project-preview {
   display: none;
   position: fixed;
@@ -193,48 +143,66 @@ main.work-page {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  display: block;
 }
 
-@media (max-width: 768px) {
-  header {
-    padding: 0.5rem;
-  }
-
-  .logo a {
-    font-size: 0.8rem;
-  }
-
-  nav.links a {
-    font-size: 0.7rem;
-  }
-
-  main.work-page {
-    padding-top: 4rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-  }
-
-  .project {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-
-  .project-info {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .year {
-    text-align: left;
-  }
-
-  .category {
-    text-align: left;
-  }
+/* === HOMEPAGE === */
+body.home {
+  background: #e4fb87;
 }
 
+body.home h1 {
+  font-size: 2.5rem;
+  font-weight: 400;
+  color: #222;
+  margin: 0;
+}
+
+body.home .bio {
+  width: 100%;
+}
+
+/* === ABOUT PAGE === */
+.intro-text {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === CONTACT PAGE === */
+.contact-text h1 {
+  white-space: nowrap;
+}
+
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-details li {
+  margin-top: 8px;
+  margin-bottom: 0.5em;
+
+}
+
+.contact-details a {
+  font-size: 0.9rem;
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+}
+.contact-details a:hover {
+  color: #666;
+}
+
+.contact-image img {
+  max-width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+/* === FONTS === */
 @font-face {
   font-family: 'BaleteSemibold';
   src: url('fonts/BaleteTrial-Semibold copy.otf') format('opentype');
@@ -242,106 +210,26 @@ main.work-page {
   font-style: normal;
 }
 
-/* Homepage-specific styles */
-body.home {
-  background: #e4fb87; /* Green background */
-}
-
-body.home main {
-  display: flex;
-  flex-direction: column; /* Stack content vertically */
-  align-items: flex-start; /* Align to the left */
-  justify-content: flex-end; /* Push content to the bottom */
-  min-height: calc(100vh - 60px); /* Adjust based on header height */
-  padding: 1rem;
-}
-
-body.home .bio {
-  width: 100%;
-}
-
-body.home h1 {
-  font-size: 2.5rem;
-  font-weight: 400;
-  line-height: 1.2;
-  color: #222;
-  margin: 0;
-  width: 100%;
-  max-width: none;
-}
-
-body.home h1 .distressed {
-  font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-  font-size: inherit;
-}
-.about-main {
-  min-height: 100vh; /* full viewport height */
-  display: flex;
-  align-items: center;    /* vertical centering */
-  justify-content: center; /* horizontal centering */
-}
-
-.intro-text {
-  text-align: center;     /* center text inside the box */
-  max-width: 600px;       /* optional: limits line length for readability */
-  margin: 0 auto;
-}
-
-/*contact.css*/
-.contact-main {
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  align-items: flex-start; /* Align to the left */
-  justify-content: flex-start;
-  padding: 1rem; /* Use same padding as homepage */
-  box-sizing: border-box;
-}
-
-.contact-text {
-  margin-top: 8rem; /* Add margin to align content below header */
-  width: 70%;
-  display: flex;
-  align-items: center;
-}
-
-.contact-text h1 {
-  white-space: nowrap;
-}
-
-.contact-links {
-  display: flex;
-}
-
-.contact-details {
-  list-style: none;
-  padding: 0.;
-  margin: 0;
-}
-
-.contact-details li {
-  margin-top: 8px;
-  margin-bottom: 0.5em;
-  
-}
-
-/* Style the CV text */
-.contact-text a {
-
-  font-size: 0.9rem;
-  display: block;
-}
-
-.contact-image {
-  width: 30%;
-  margin-top: 5rem;
-  display: flex;
-  justify-content: flex-end; /* Push image to the right */
-}
-
-.contact-image img {
-  max-width: 130%;
-  height: auto;
-  display: inline-block;
-  vertical-align: middle;
+/* === MEDIA QUERIES === */
+@media (max-width: 768px) {
+  header {
+    padding: 0.5rem;
+  }
+  .logo a {
+    font-size: 0.8rem;
+  }
+  nav.links a {
+    font-size: 0.7rem;
+  }
+  .project {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .project-info {
+    align-items: flex-start;
+  }
+  .year, .category {
+    text-align: left;
+  }
 }
