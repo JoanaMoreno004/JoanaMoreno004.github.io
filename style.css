@@ -13,16 +13,6 @@ main {
 .grid-span-8  { grid-column: 3 / span 8; }
 .grid-span-6  { grid-column: 4 / span 6; }
 .grid-span-4  { grid-column: 5 / span 4; }
-@media (max-width: 900px) {
-  main {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
-  main > * {
-    grid-column: 1 / -1 !important;
-  }
-}
 
 /* === GENERAL STYLES === */
 body {
@@ -69,10 +59,6 @@ nav.links a {
   transition: color 0.2s;
 }
 
-/*nav.links a:hover {
-  font-size: 1.12rem;
-}
-
 /* === PROJECTS (WORK PAGE) === */
 .projects {
   width: 100%;
@@ -96,15 +82,12 @@ nav.links a {
   color: #222;
   line-height: 0.9;
   text-align: left;
-  
 }
-
 
 .category {
   font-size: 1.1rem;
   text-align: left;
 }
-
 
 /* === PROJECT PREVIEW === */
 #project-preview {
@@ -147,7 +130,6 @@ body.home h1 {
   margin: 0;
   margin-top: 420px;
   margin-bottom: 20px;
-
 }
 
 body.home .bio {
@@ -168,29 +150,17 @@ body, html {
   overflow: hidden; /* Prevent normal scroll */
 }
 
-/* === ABOUT PAGE === */
-.intro-text {
-  text-align: center;
-  font-size: 1.7rem;
-  line-height: 1.3;
-  max-width: 4000px;
-  margin: 0 auto;
-  margin-top: 170px;
-}
-
 .photo-stack {
   position: fixed;
   left: 0; top: 0; right: 0; bottom: 0;
   width: 100vw;
   height: 100vh;
-  /* pointer-events: none; */ /* Remove if you want clickable images */
   z-index: 2;
 }
 
 .photo-stack .photo {
   position: absolute;
   width: 400px;
-  /* transition: transform 0.7s cubic-bezier(.77,0,.18,1); */ /* REMOVE THIS LINE */
   will-change: transform;
 }
 
@@ -200,37 +170,101 @@ body, html {
 }
 
 /* === CONTACT PAGE === */
-.contact-text h1 {
+main.contact-main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 0;
+  padding-right: 1rem; 
+  margin-top: 13rem;
+  align-items: start;
+}
+
+.contact-text {
+  grid-column: 1 / span 7;
+  display: flex;
+  align-items: flex-start;
+  padding-top: 2rem;
+  padding-left: 1.3rem; /* Match header's left padding */
+  font-size: 14px;
+}
+
+
+.contact-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+
+.contact-row h1 {
+  margin: 0;
+  font-size: rem;
+  line-height: 0.3;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .contact-details {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4em;
+  min-width:0.1px;
 }
 
 .contact-details li {
-  margin-top: 8px;
-  margin-bottom: 0.5em;
-
+  margin: 0;
 }
 
-.contact-details a {
-  font-size: 0.9rem;
-  color: #222;
-  text-decoration: none;
-  transition: color 0.2s;
-  
-}
-.contact-details a:hover {
-  color: #666;
+.contact-image {
+  grid-column: 9 / span 4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .contact-image img {
   max-width: 100%;
   height: auto;
-  display: inline-block;
+  display: block;
+  border-radius: 16px;
+}
+
+/* === RESPONSIVE: stack vertically on smaller screens === */
+@media (max-width: 900px) {
+  main,
+  main.contact-main {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  main > *,
+  main.contact-main > * {
+    grid-column: 1 / -1 !important;
+    width: 100%;
+    padding-top: 0;
+  }
+  .contact-row {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+    width: 100%;
+  }
+  .contact-row h1 {
+    font-size: 2.2rem;
+  }
+  .contact-details {
+    min-width: auto;
+  }
+  .contact-image {
+    justify-content: flex-start;
+  }
 }
 
 /* === FONTS === */
@@ -240,5 +274,3 @@ body, html {
   font-weight: normal;
   font-style: normal;
 }
-
-
