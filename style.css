@@ -329,4 +329,71 @@ main.contact-main {
   object-fit: cover;
 }
 
+/* Project Detail Page Layout */
+.project-detail-main {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  width: 100%;
+  box-sizing: border-box;
+  padding: 1rem;
+  margin-top: 6rem; /* adjust if needed for header */
+}
+
+.project-detail {
+  grid-column: 1 / 6; /* spans columns 1 to 5 */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* left align everything */
+  text-align: left;
+  gap: 1.5rem;
+}
+
+/* Title styling for project detail */
+.project-detail .distressed {
+  font-family: 'BaleteSemibold', serif;
+  font-size: 3.5rem;  /* or your preferred size */
+  color: #222;
+  line-height: 1.1;
+  margin: 0;
+  font-weight: normal;
+}
+
+/* Year and category styling */
+.project-detail .year {
+  font-size: 1.2rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.project-detail .category {
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.1;
+  white-space: pre-line;
+  margin-bottom: 1rem;
+}
+
+/* Description styling */
+.project-detail .description {
+  font-size: 1.1rem;
+  color: #222;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Responsive: make it full width on small screens */
+@media (max-width: 900px) {
+  .project-detail-main {
+    grid-template-columns: 1fr;
+    padding: 0.5rem;
+  }
+  .project-detail {
+    grid-column: 1 / -1;
+    font-size: 1rem;
+    padding: 0;
+  }
+  .project-detail .distressed {
+    font-size: 2rem;
+  }
+}
 
