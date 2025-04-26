@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // === 1. PROJECT PREVIEW ON HOVER (Work Page) ===
+  // === 1. PROJECT PREVIEW ON HOVER (Work Page, fixed at right) ===
   const preview = document.getElementById('project-preview');
-  const projects = document.querySelectorAll('.project');
+  const titles = document.querySelectorAll('.project-row .distressed a');
 
-  if (preview && projects.length > 0) {
-    projects.forEach(project => {
-      project.addEventListener('mouseenter', e => {
+  if (preview && titles.length > 0) {
+    titles.forEach(link => {
+      link.addEventListener('mouseenter', function(e) {
+        const project = link.closest('.project');
         const src = project.getAttribute('data-preview');
         if (src && src !== "...") {
           if (src.endsWith('.mp4')) {
@@ -14,21 +15,15 @@ document.addEventListener('DOMContentLoaded', function() {
             preview.innerHTML = `<img src="${src}" alt="Project preview">`;
           }
           preview.classList.add('active');
-          preview.style.display = 'block';
         }
       });
 
-      project.addEventListener('mousemove', e => {
-        const offsetX = 32;
-        const offsetY = -40;
-        preview.style.left = (e.clientX + offsetX) + 'px';
-        preview.style.top = (e.clientY + offsetY) + 'px';
-      });
-
-      project.addEventListener('mouseleave', () => {
+      link.addEventListener('mouseleave', function(e) {
         preview.classList.remove('active');
-        preview.style.display = 'none';
-        preview.innerHTML = '';
+        // Optionally clear content after fade-out:
+        setTimeout(() => { 
+          if (!preview.classList.contains('active')) preview.innerHTML = ''; 
+        }, 200);
       });
     });
   }
