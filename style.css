@@ -7,6 +7,7 @@ main {
   box-sizing: border-box;
   padding: 1rem;
   margin-top: 4rem;
+  background-color: transparent; /* Let body control the background */
 }
 .grid-span-12 { grid-column: 1 / span 12; }
 .grid-span-10 { grid-column: 2 / span 10; }
@@ -20,6 +21,11 @@ body {
   margin: 0;
   padding: 0;
   min-height: 100vh;
+  background: #F5F6EB; /* Default for all pages */
+}
+
+body.home {
+  background: #e4fb87; /* Only homepage */
 }
 
 .container {
@@ -70,22 +76,18 @@ nav.links a {
 /* === UNIVERSAL LINK STYLES === */
 a,
 a:visited {
-  color: #222;             /* Choose your preferred color */
-  text-decoration: none;   /* Remove underline */
-  transition: color 0.2s;  /* Smooth color change on hover */
+  color: #222;
+  text-decoration: none;
+  transition: color 0.2s;
 }
 
 a:hover,
 a:focus {
-  color: #666;             /* Optional: Slightly lighter on hover/focus */
-  text-decoration: none;   /* Keep underline off on hover/focus */
+  color: #666;
+  text-decoration: none;
 }
 
 /* === HOMEPAGE === */
-body.home {
-  background: #e4fb87;
-}
-
 body.home h1 {
   font-size: 4rem;
   font-weight: 400;
@@ -102,6 +104,7 @@ body.home .bio {
 
 /* === ABOUT PAGE === */
 .intro-text {
+  font-family: 'Alte Haas Grotesk', Arial, sans-serif;
   text-align: center;
   font-size: 1.7rem;
   line-height: 1.3;
@@ -142,65 +145,93 @@ main.contact-main {
   box-sizing: border-box;
   padding-left: 0;
   padding-right: 1rem; 
-  margin-top: 13rem;
+  margin-top: 6rem;
   align-items: start;
 }
 
 .contact-text {
   grid-column: 1 / span 7;
-  display: flex;
-  align-items: flex-start;
-  padding-top: 2rem;
-  padding-left: 1.3rem; /* Match header's left padding */
+  /* Remove display: flex; so children stack vertically by default */
+  padding-top: 0.1rem;
+  padding-left: 1.3rem;
   font-size: 14px;
 }
 
 
 .contact-row {
-  display: flex;
-  align-items: flex-start;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
   gap: 3rem;
-  flex-wrap: nowrap;
   width: 100%;
+  align-items: center;
 }
+
 .contact-row h1 {
   font-family: 'BaleteSemibold', serif;
-  font-size: 3.5rem;   /* or whatever size you want */
+  font-size: 3.5rem;
   color: #222;
   line-height: 0.7;
   margin: 0;
   white-space: nowrap;
-  font-weight: normal;  /* Not bold, since the font is already semibold */
+  font-weight: normal;
 }
-
 
 .contact-details {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 1.5rem 0 0 0;
   display: flex;
-  flex-direction: column;
-  gap: 0.4em;
-  min-width:0.1px;
+  flex-direction: row;
+  gap: 2rem;
+  min-width: 0.1px;
+  display: flex;
+  justify-content: flex-start;
 }
+
 
 .contact-details li {
   margin: 0;
 }
 
+.contact-details a {
+  color: #222;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+  
+}
+
+.contact-details a:hover {
+  color: #666;
+}
+
+
 .contact-image {
   grid-column: 9 / span 4;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  /* Optional: add padding-right for spacing from the edge */
+  padding-right: 0;
 }
 
 .contact-image img {
-  max-width: 100%;
+  width: 390px; /* or max-width: 100%; for responsiveness */
   height: auto;
   display: block;
-  border-radius: px;
+  border-radius: 0;
+  /* Subtle, easy-to-edit transform: */
+  transform: rotate(10deg) translateX(10px) translateY(20px);
+  /* Adjust translateX/Y for small nudges, NOT huge jumps */
+  transition: transform 0.3s;
+  transform: rotate(10deg) translateX(500px) translateY(0px);
+  }
+  
+  }
+  
 }
+
+
 
 /* === RESPONSIVE: stack vertically on smaller screens === */
 @media (max-width: 900px) {
@@ -237,7 +268,7 @@ main.contact-main {
 /* === PROJECTS (WORK PAGE) === */
 .projects {
   width: 100%;
-  max-width: 1100px;    /* or whatever max width you want */
+  max-width: 1100px;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -262,12 +293,12 @@ main.contact-main {
 }
 
 .project-row .distressed {
-  font-size: 2.5rem; /* as big as you want */
+  font-size: 2.5rem;
   font-family: 'BaleteSemibold', serif;
   color: #222;
   line-height: 1.1;
-  white-space: nowrap;        /* keep title on one line */
-  margin-right: 1.5rem;       /* space between title and category */
+  white-space: nowrap;
+  margin-right: 1.5rem;
 }
 
 .project-row .category {
@@ -275,11 +306,10 @@ main.contact-main {
   color: #222;
   line-height: 1.1;
   text-align: left;
-  white-space: pre-line;      /* keep <br> */
-  flex-shrink: 0;             /* don't shrink */
+  white-space: pre-line;
+  flex-shrink: 0;
 }
 
-/* Responsive: stack vertically on mobile */
 @media (max-width: 900px) {
   .projects {
     max-width: 100%;
@@ -303,8 +333,8 @@ main.contact-main {
 #project-preview {
   display: none;
   position: fixed;
-  top: 120px;      /* Adjust this value to change vertical position */
-  right: 40px;     /* Adjust this value to change horizontal position */
+  top: 120px;
+  right: 40px;
   width: 340px;
   height: 220px;
   background: #fff;
@@ -336,29 +366,27 @@ main.contact-main {
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
-  margin-top: 6rem; /* adjust if needed for header */
+  margin-top: 6rem;
 }
 
 .project-detail {
-  grid-column: 1 / 6; /* spans columns 1 to 5 */
+  grid-column: 1 / 6;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* left align everything */
+  align-items: flex-start;
   text-align: left;
   gap: 1.5rem;
 }
 
-/* Title styling for project detail */
 .project-detail .distressed {
   font-family: 'BaleteSemibold', serif;
-  font-size: 3.5rem;  /* or your preferred size */
+  font-size: 3.5rem;
   color: #222;
   line-height: 1.1;
   margin: 0;
   font-weight: normal;
 }
 
-/* Year and category styling */
 .project-detail .year {
   font-size: 1.2rem;
   color: #222;
@@ -373,7 +401,6 @@ main.contact-main {
   margin-bottom: 1rem;
 }
 
-/* Description styling */
 .project-detail .description {
   font-size: 1.1rem;
   color: #222;
@@ -381,7 +408,6 @@ main.contact-main {
   margin: 0;
 }
 
-/* Responsive: make it full width on small screens */
 @media (max-width: 900px) {
   .project-detail-main {
     grid-template-columns: 1fr;
@@ -396,4 +422,3 @@ main.contact-main {
     font-size: 2rem;
   }
 }
-

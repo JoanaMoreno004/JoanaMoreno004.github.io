@@ -33,9 +33,13 @@ document.addEventListener('DOMContentLoaded', function() {
   if (photoStack) {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
     const positions = [
-      { x: 60,  y: 400 },
-      { x: 500, y: 320 },
-      { x: 250, y: 120 },
+      { x: 100,  y: 90, rotation: -10, scale: 0.7 },
+      { x: 650, y: 200, rotation: 10, scale: 0.75 },
+      
+      { x: 300, y: 390, rotation: -5, scale: 0.66 },
+      { x: 330, y: 150, rotation: 5, scale: 0.75 },
+      { x: 430, y: 10, rotation: 5, scale: 0.65 },
+      
       // Add more as needed, one per photo
     ];
     const revealDistance = 300;
@@ -45,22 +49,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updatePhotosOnScroll() {
       photos.forEach((photo, i) => {
+        const pos = positions[i] || positions[positions.length - 1] || { x: 0, y: 0, rotation: 0, scale: 1 };
         const start = i * revealDistance;
         const end = start + revealDistance;
+        const rotation = pos.rotation !== undefined ? pos.rotation : 0;
+        const scale = pos.scale !== undefined ? pos.scale : 1;
         if (scrollPosition <= start) {
-          // Off-screen
-          photo.style.transform = `translate(${positions[i].x}px, 100vh)`;
+          photo.style.transform = `translate(${pos.x}px, 100vh) rotate(${rotation}deg) scale(${scale})`;
         } else if (scrollPosition >= end) {
-          // At landing position
-          photo.style.transform = `translate(${positions[i].x}px, ${positions[i].y}px)`;
+          photo.style.transform = `translate(${pos.x}px, ${pos.y}px) rotate(${rotation}deg) scale(${scale})`;
         } else {
-          // In between: interpolate Y
           const progress = (scrollPosition - start) / revealDistance;
-          const targetY = (1 - progress) * window.innerHeight + progress * positions[i].y;
-          photo.style.transform = `translate(${positions[i].x}px, ${targetY}px)`;
+          const targetY = (1 - progress) * window.innerHeight + progress * pos.y;
+          photo.style.transform = `translate(${pos.x}px, ${targetY}px) rotate(${rotation}deg) scale(${scale})`;
         }
       });
     }
+    
 
     // Listen for wheel events to update scroll position directly
     window.addEventListener('wheel', function(e) {
