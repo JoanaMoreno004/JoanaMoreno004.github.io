@@ -33,15 +33,24 @@ document.addEventListener('DOMContentLoaded', function() {
   if (photoStack) {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
     const positions = [
-      { x: 100,  y: 90, rotation: -10, scale: 0.7 },
-      { x: 650, y: 200, rotation: 10, scale: 0.75 },
+      { x: 100,  y: 90, rotation: -10, scale: 0.8 },
+      { x: 650, y: 200, rotation: 10, scale: 0.8 },
       
-      { x: 300, y: 390, rotation: -5, scale: 0.66 },
-      { x: 330, y: 150, rotation: 5, scale: 0.75 },
-      { x: 430, y: 10, rotation: 5, scale: 0.65 },
+      { x: 300, y: 390, rotation: -5, scale: 0.77 },
+      { x: 330, y: 150, rotation: 5, scale: 0.85 },
+      { x: 430, y: 10, rotation: 5, scale: 0.75 },
       
-      // Add more as needed, one per photo
     ];
+
+    // Mobile composition (customize as you like!)
+    const mobilePositions = [
+      { x: 10,  y: 40,  rotation: -8, scale: 0.6 },
+      { x: 70,  y: 120, rotation: 7,  scale: 0.6 },
+      { x: 110, y: 30,  rotation: -4, scale: 0.55 },
+      { x: 60,  y: 200, rotation: 5,  scale: 0.65 },
+      { x: 130, y: 170, rotation: 8,  scale: 0.5 },
+    ];
+
     const revealDistance = 300;
     let scrollPosition = 0;
     const minScroll = 0;
