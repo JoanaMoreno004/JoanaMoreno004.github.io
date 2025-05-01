@@ -1,28 +1,51 @@
+/*
+Joana Moreno - Nº3220549
+-
 
+Data - 04/05/2025
 
-/*= GENERAL STYLES =*/
+-
+
+Nome do Exercício
+Portfólio
+-
+
+Época de Avaliação
+Contínua (Durante as aulas)
+-
+
+Ano Letivo - 3º Ano, 2024-2025
+Semestre - 2º
+Unidade Curricular - Laboratório de Projeto II
+Curso - Design Gráfico e Multimédia (DGM)
+Escola - Escola Superior de Artes e Design das Caldas da Rainha (ESAD.CR)
+Docente - Marco Heleno
+-
+*/
+
+/* ESTILOS BASE */
 body {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
   font: #2D262D
   margin: 0;
   padding: 0;
   min-height: 100vh;
-  background: #F5F6EB; /* Default for all pages */
+  background: #F5F6EB; /* Cor base para todas as páginas */
 }
 
 body.home {
-  background: #B6B1EF; /* Only homepage */
+  background: #B6B1EF; /* Cor base só na homepage */
 }
 
 .container {
   width: 100%;
   min-height: 100vh;
-  display: flex; /* Use flexbox to structure the page */
-  flex-direction: column; /* Stack header, main, footer vertically */
+  display: flex; /* Flexbox para estruturar a página */
+  flex-direction: column; /* header, main, footer Verticalmente */
 }
 
 main {
-  flex: 1; /* Allow main to grow and take up remaining space */
+  flex: 1; 
   padding: 1rem;
   box-sizing: border-box;
   margin-top: 4rem;
@@ -62,7 +85,7 @@ nav.links a {
   transition: color 0.2s;
 }
 
-/*= FONTS =*/
+/* FONTES */
 @font-face {
   font-family: 'BaleteSemibold';
   src: url('fonts/BaleteTrial-Semibold copy.otf') format('opentype');
@@ -70,7 +93,7 @@ nav.links a {
   font-style: normal;
 }
 
-/*= UNIVERSAL LINK STYLES =*/
+/* UNIVERSAL LINK ESTILOS */
 a,
 a:visited {
   color: #2D262D;
@@ -83,7 +106,7 @@ a:focus {
   text-decoration: none;
 }
 
-/*= HOMEPAGE =*/
+/* HOMEPAGE */
 body.home h1 {
   font-size: 5.1rem;
   font-weight: 400;
@@ -97,7 +120,7 @@ body.home .bio {
   width: 100%;
 }
 
-/*= ABOUT PAGE =*/
+/* ABOUT PÁGINA */
 .intro-text {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
   text-align: center;
@@ -110,7 +133,7 @@ body.home .bio {
 
 body, html {
   height: 100%;
-  overflow: hidden; /* Prevent normal scroll */
+  overflow: hidden; /* Prevenir scrool */
 }
 
 .photo-stack {
@@ -126,8 +149,8 @@ body, html {
 
 .composition {
   position: relative;
-  width: 1150px;   /* Set to fit your composition */
-  height: 700px;  /* Set to fit your composition */
+  width: 1150px;   /* Ajustar a composição*/
+  height: 700px;  /* Ajustar a composição */
   max-width: 95vw;
   max-height: 80vh;
 }
@@ -143,7 +166,7 @@ body, html {
 
 
 
-/*= CONTACT PAGE =*/
+/*= CONTACT PÁGINA =*/
 main.contact-main {
   width: 100%;
   box-sizing: border-box;
@@ -229,7 +252,7 @@ main.contact-main {
   
 
 
-/*= WORK PAGE =*/
+/*= WORK PÁGINA =*/
 .projects {
   width: 100%;
   max-width: 1100px;
@@ -295,7 +318,7 @@ main.contact-main {
   }
 }
 
-/* === PROJECT PREVIEW === */
+/* WORK/PROJECT PREVIEW */
 #project-preview {
   display: none;
   position: fixed;
@@ -323,7 +346,7 @@ main.contact-main {
   object-fit: cover;
 }
 
-/*= Project Detail Page Layout =*/
+/* WORK/PROJECT DETAIL PÁGINA LAYOUT */
 .project-detail-main {
   width: 100%;
   box-sizing: border-box;
@@ -370,7 +393,7 @@ main.contact-main {
   line-height: 1.4;
   margin-bottom: 0rem;
 }
-/* Scrollable Image Container */
+/* IMAGEM COM SCROOL */
 .zine-image-container {
   .zine-image-container {
     width: 60%;
@@ -426,7 +449,6 @@ main.contact-main {
       border-radius: 4px;
     }
 
-    /* Scroll indicator */
     .scroll-indicator {
       position: fixed;
       right: 20px;
@@ -448,7 +470,7 @@ main.contact-main {
       transition: height 0.1s;
     }
 
-    /* Scroll hint */
+  
     .scroll-hint {
       position: fixed;
       bottom: 30px;

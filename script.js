@@ -1,5 +1,30 @@
 document.addEventListener('DOMContentLoaded', function() {
-  // === 1. PROJECT PREVIEW ON HOVER (Work Page, fixed at right) ===
+  /*
+Joana Moreno - Nº3220549
+-
+
+Data - 04/05/2025
+
+-
+
+Nome do Exercício
+Portfólio
+-
+
+Época de Avaliação
+Contínua (Durante as aulas)
+-
+
+Ano Letivo - 3º Ano, 2024-2025
+Semestre - 2º
+Unidade Curricular - Laboratório de Projeto II
+Curso - Design Gráfico e Multimédia (DGM)
+Escola - Escola Superior de Artes e Design das Caldas da Rainha (ESAD.CR)
+Docente - Marco Heleno
+-
+*/
+  
+  // PROJECT/WORK PREVIEW ON HOVER
   const preview = document.getElementById('project-preview');
   const titles = document.querySelectorAll('.project-row .distressed a');
 
@@ -20,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
       link.addEventListener('mouseleave', function(e) {
         preview.classList.remove('active');
-        // Optionally clear content after fade-out:
         setTimeout(() => { 
           if (!preview.classList.contains('active')) preview.innerHTML = ''; 
         }, 200);
@@ -28,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // SMOOTH SCROLL-JACKING PHOTO ANIMATION (About Page) 
+  // SCROLL - ANIMAÇÃO DA STACK DAS FOTOS DA PÁGINA DO ABOUT 
   const photoStack = document.querySelector('.photo-stack');
   if (photoStack) {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
@@ -41,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       
     ];
 
-    // Mobile composition (customize as you like!)
+    // Costumisar no telemóvel
     const mobilePositions = [
       { x: 10,  y: 40,  rotation: -8, scale: 0.6 },
       { x: 70,  y: 120, rotation: 7,  scale: 0.6 },
@@ -74,12 +98,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
 
-    // Listen for wheel events to update scroll position directly
     window.addEventListener('wheel', function(e) {
       scrollPosition += e.deltaY;
       scrollPosition = Math.max(minScroll, Math.min(maxScroll, scrollPosition));
       updatePhotosOnScroll();
-      e.preventDefault(); // Prevent normal scroll
+      e.preventDefault();
     }, { passive: false });
 
   
