@@ -25,7 +25,7 @@ body {
 }
 
 body.home {
-  background: #e4fb87; /* Only homepage */
+  background: #B6B1EF; /* Only homepage */
 }
 
 .container {
@@ -89,7 +89,7 @@ a:focus {
 
 /* === HOMEPAGE === */
 body.home h1 {
-  font-size: 4rem;
+  font-size: 5.1rem;
   font-weight: 400;
   line-height: 1.1;
   color: #222;
@@ -115,6 +115,7 @@ body.home .bio {
 body, html {
   height: 100%;
   overflow: hidden; /* Prevent normal scroll */
+  
 }
 
 .photo-stack {
@@ -278,10 +279,11 @@ main.contact-main {
 .projects {
   width: 100%;
   max-width: 1100px;
-  margin: 0 auto;
+  margin-top: 40px;
+  margin-left: 40px;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .project {
@@ -291,14 +293,14 @@ main.contact-main {
 .project-row {
   width: 100%;
   display: flex;
-  gap: 2rem;
-  height: 48px;
+  gap: 1rem;
+  height: 50px;
  
 }
 
 .project-row .year {
   
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #222;
   vertical-align: super;
   line-height: 0;
@@ -312,11 +314,11 @@ main.contact-main {
   color: #222;
   line-height: 0.5;
   white-space: nowrap;
-  margin-right: 1.5rem;
+  margin-right: 0rem;
 }
 
 .project-row .category {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #222;
   text-align: left;
   flex-shrink: 0;
@@ -349,10 +351,8 @@ main.contact-main {
   top: 120px;
   right: 40px;
   width: 340px;
-  height: 220px;
+  height: 420px;
   background: #fff;
-  border: 1px solid #ddd;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.18);
   overflow: hidden;
   z-index: 1000;
   pointer-events: none;
@@ -419,6 +419,12 @@ main.contact-main {
   color: #222;
   line-height: 1.5;
   margin: 0;
+}
+
+
+/* === PROJECT MANIFEST ZINE === */
+body.manifest-zine {
+  overflow: hidden;
 }
 
 @media (max-width: 900px) {
