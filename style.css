@@ -1,19 +1,4 @@
-/* === UNIVERSAL 12-COLUMN GRID FOR MAIN CONTENT === */
-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 1rem;
-  margin-top: 4rem;
-  background-color: transparent; /* Let body control the background */
-}
-.grid-span-12 { grid-column: 1 / span 12; }
-.grid-span-10 { grid-column: 2 / span 10; }
-.grid-span-8  { grid-column: 3 / span 8; }
-.grid-span-6  { grid-column: 4 / span 6; }
-.grid-span-4  { grid-column: 5 / span 4; }
+
 
 /* === GENERAL STYLES === */
 body {
@@ -25,13 +10,24 @@ body {
 }
 
 body.home {
-  background: #B6B1EF; /* Only homepage */
+  background: #e4fb87; /* Only homepage */
 }
 
 .container {
   width: 100%;
   min-height: 100vh;
+  display: flex; /* Use flexbox to structure the page */
+  flex-direction: column; /* Stack header, main, footer vertically */
 }
+
+main {
+  flex: 1; /* Allow main to grow and take up remaining space */
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top: 4rem;
+  background-color: transparent;
+}
+
 
 header {
   width: 100%;
@@ -65,7 +61,7 @@ nav.links a {
   transition: color 0.2s;
 }
 
-/* === FONTS === */
+/*= FONTS =*/
 @font-face {
   font-family: 'BaleteSemibold';
   src: url('fonts/BaleteTrial-Semibold copy.otf') format('opentype');
@@ -73,7 +69,7 @@ nav.links a {
   font-style: normal;
 }
 
-/* === UNIVERSAL LINK STYLES === */
+/*= UNIVERSAL LINK STYLES =*/
 a,
 a:visited {
   color: #222;
@@ -87,7 +83,7 @@ a:focus {
   text-decoration: none;
 }
 
-/* === HOMEPAGE === */
+/*= HOMEPAGE =*/
 body.home h1 {
   font-size: 5.1rem;
   font-weight: 400;
@@ -102,7 +98,7 @@ body.home .bio {
   width: 100%;
 }
 
-/* === ABOUT PAGE === */
+/*= ABOUT PAGE =*/
 .intro-text {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
   text-align: center;
@@ -112,10 +108,10 @@ body.home .bio {
   margin: 0 auto;
   margin-top: 180px;
 }
+
 body, html {
   height: 100%;
   overflow: hidden; /* Prevent normal scroll */
-  
 }
 
 .photo-stack {
@@ -150,20 +146,17 @@ body, html {
 
 /* === CONTACT PAGE === */
 main.contact-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 2rem;
   width: 100%;
   box-sizing: border-box;
   padding-left: 0;
   padding-right: 1rem; 
   margin-top: 6rem;
-  align-items: start;
 }
 
+
 .contact-text {
-  grid-column: 1 / span 7;
-  /* Remove display: flex; so children stack vertically by default */
+  width: 200px;
+  float: left;
   padding-top: 0rem;
   padding-left: 6rem;
   font-size: 6px;
@@ -171,8 +164,6 @@ main.contact-main {
 
 
 .contact-row {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   gap: 3rem;
   width: 100%;
   align-items: center;
@@ -219,7 +210,8 @@ main.contact-main {
 
 
 .contact-image {
-  grid-column: 9 / span 4;
+  width: 200px; /* or max-width: 100%; for responsiveness */
+  height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -237,42 +229,6 @@ main.contact-main {
   transform: rotate(10deg) translateX(800px) translateY(0px);
   }
   
-  }
-  
-}
-
-
-
-/* === RESPONSIVE: stack vertically on smaller screens === */
-@media (max-width: 900px) {
-  main,
-  main.contact-main {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-    padding: 0.5rem;
-  }
-  main > *,
-  main.contact-main > * {
-    grid-column: 1 / -1 !important;
-    width: 100%;
-    padding-top: 0;
-  }
-  .contact-row {
-    flex-direction: column;
-    gap: 1.5rem;
-    align-items: flex-start;
-    width: 100%;
-  }
-  .contact-row h1 {
-    font-size: 2.2rem;
-  }
-  .contact-details {
-    min-width: auto;
-  }
-  .contact-image {
-    justify-content: flex-start;
-  }
-}
 
 
 /* === PROJECTS (WORK PAGE) === */
@@ -374,22 +330,23 @@ main.contact-main {
 
 /* Project Detail Page Layout */
 .project-detail-main {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
   width: 100%;
   box-sizing: border-box;
   padding: 1rem;
   margin-top: 6rem;
 }
 
+
 .project-detail {
-  grid-column: 1 / 6;
+  width: 41.67%; /* Equivalent to span 5 */
+  float: left;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   gap: 1.5rem;
 }
+
 
 .project-detail .distressed {
   font-family: 'BaleteSemibold', serif;
@@ -420,24 +377,120 @@ main.contact-main {
   line-height: 1.5;
   margin: 0;
 }
+/* Scrollable Image Container */
+.zine-image-container {
+      width: 60%;
+      height: 100%;
+      position: relative;
+      overflow: hidden; /* Ensure content outside is hidden */
+    }
 
+    .scrollable-content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 300vh; /* Make this taller to allow scrolling */
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end; /* Right align images */
+      padding-right: 4rem;
+      padding-top: 2rem;
+    }
 
-/* === PROJECT MANIFEST ZINE === */
-body.manifest-zine {
-  overflow: hidden;
-}
+    .zine-image {
+      width: 80%;
+      max-width: 600px;
+      margin-bottom: 4rem; /* Space between images */
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transform: rotate(2deg); /* Slight rotation for aesthetic */
+      transition: transform 0.3s ease;
+    }
 
-@media (max-width: 900px) {
-  .project-detail-main {
-    grid-template-columns: 1fr;
-    padding: 0.5rem;
-  }
-  .project-detail {
-    grid-column: 1 / -1;
-    font-size: 1rem;
-    padding: 0;
-  }
-  .project-detail .distressed {
-    font-size: 2rem;
-  }
-}
+    .zine-image img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Scrollbar styling for webkit browsers */
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0,0,0,0.2);
+      border-radius: 4px;
+    }
+
+    /* Scroll indicator */
+    .scroll-indicator {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 2px;
+      height: 100px;
+      background: rgba(0,0,0,0.1);
+      border-radius: 1px;
+      z-index: 5;
+    }
+
+    .scroll-progress {
+      width: 100%;
+      background: #222;
+      position: absolute;
+      bottom: 0;
+      height: 0; /* Will be updated with JS */
+      transition: height 0.1s;
+    }
+
+    /* Scroll hint */
+    .scroll-hint {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      opacity: 1;
+      transition: opacity 0.5s;
+      z-index: 5;
+    }
+
+    .scroll-hint.hidden {
+      opacity: 0;
+    }
+
+    .scroll-icon {
+      width: 20px;
+      height: 40px;
+      border: 2px solid #222;
+      border-radius: 10px;
+      position: relative;
+      margin-bottom: 8px;
+    }
+
+    .scroll-icon:before {
+      content: '';
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      background: #222;
+      border-radius: 50%;
+      transform: translateX(-50%);
+      animation: scrollHint 1.5s infinite;
+    }
+
+    .scroll-text {
+      font-size: 0.8rem;
+      color: #222;
+    }
+
+    
