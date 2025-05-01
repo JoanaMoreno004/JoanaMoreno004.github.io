@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 
-  // === 2. SMOOTH SCROLL-JACKING PHOTO ANIMATION (About Page) ===
+  // SMOOTH SCROLL-JACKING PHOTO ANIMATION (About Page) 
   const photoStack = document.querySelector('.photo-stack');
   if (photoStack) {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault(); // Prevent normal scroll
     }, { passive: false });
 
-    // Optional: Keyboard support
+  
     window.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowDown' || e.key === 'PageDown') {
         scrollPosition += 60;
@@ -93,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
       updatePhotosOnScroll();
     });
 
-    // Initial render
     updatePhotosOnScroll();
   }
 });

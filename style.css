@@ -1,8 +1,9 @@
 
 
-/* === GENERAL STYLES === */
+/*= GENERAL STYLES =*/
 body {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
+  font: #2D262D
   margin: 0;
   padding: 0;
   min-height: 100vh;
@@ -10,7 +11,7 @@ body {
 }
 
 body.home {
-  background: #e4fb87; /* Only homepage */
+  background: #B6B1EF; /* Only homepage */
 }
 
 .container {
@@ -44,7 +45,7 @@ header {
 }
 .logo a{
   font-size: 1.1rem;
-  color: #222;
+  color: #2D262D;
   text-decoration: none;
   font-weight: 0;
 }
@@ -56,7 +57,7 @@ nav.links {
 
 nav.links a {
   font-size: 1.1rem;
-  color: #222;
+  
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -72,14 +73,13 @@ nav.links a {
 /*= UNIVERSAL LINK STYLES =*/
 a,
 a:visited {
-  color: #222;
+  color: #2D262D;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 a:hover,
 a:focus {
-  color: #666;
   text-decoration: none;
 }
 
@@ -88,7 +88,6 @@ body.home h1 {
   font-size: 5.1rem;
   font-weight: 400;
   line-height: 1.1;
-  color: #222;
   margin: 0;
   margin-top: 400px;
   margin-bottom: 50px;
@@ -144,7 +143,7 @@ body, html {
 
 
 
-/* === CONTACT PAGE === */
+/*= CONTACT PAGE =*/
 main.contact-main {
   width: 100%;
   box-sizing: border-box;
@@ -155,9 +154,9 @@ main.contact-main {
 
 
 .contact-text {
-  width: 200px;
+  width: 260px;
   float: left;
-  padding-top: 0rem;
+  padding-top: 7rem;
   padding-left: 6rem;
   font-size: 6px;
 }
@@ -171,7 +170,7 @@ main.contact-main {
 
 .contact-row h1 {
   font-family: 'BaleteSemibold', serif;
-  font-size: 8rem;
+  font-size: 6rem;
   color: #222;
   line-height: 0.7;
   margin: 0;
@@ -206,40 +205,39 @@ main.contact-main {
 
 .contact-details a:hover {
   color: #666;
+  text-underline-position: below;
 }
 
 
 .contact-image {
-  width: 200px; /* or max-width: 100%; for responsiveness */
+  width: 200px;
   height: auto;
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  /* Optional: add padding-right for spacing from the edge */
   padding-right: 0;
 }
 
 .contact-image img {
-  width: 450px; /* or max-width: 100%; for responsiveness */
+  width: 450px;
   height: auto;
   display: block;
   border-radius: 0;
-  /* Adjust translateX/Y for small nudges, NOT huge jumps */
   transition: transform 0.3s;
   transform: rotate(10deg) translateX(800px) translateY(0px);
   }
   
 
 
-/* === PROJECTS (WORK PAGE) === */
+/*= WORK PAGE =*/
 .projects {
   width: 100%;
   max-width: 1100px;
-  margin-top: 40px;
-  margin-left: 40px;
+  margin-top: 25px;
+  margin-left: 30px;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 .project {
@@ -250,14 +248,13 @@ main.contact-main {
   width: 100%;
   display: flex;
   gap: 1rem;
-  height: 50px;
+  height: 55px;
  
 }
 
 .project-row .year {
   
   font-size: 1rem;
-  color: #222;
   vertical-align: super;
   line-height: 0;
   position: relative;
@@ -265,17 +262,15 @@ main.contact-main {
 }
 
 .project-row .distressed {
-  font-size: 4rem;
+  font-size: 69px;
   font-family: 'BaleteSemibold', serif;
-  color: #222;
-  line-height: 0.5;
+  line-height: 0.4;
   white-space: nowrap;
   margin-right: 0rem;
 }
 
 .project-row .category {
   font-size: 1rem;
-  color: #222;
   text-align: left;
   flex-shrink: 0;
 
@@ -328,17 +323,17 @@ main.contact-main {
   object-fit: cover;
 }
 
-/* Project Detail Page Layout */
+/*= Project Detail Page Layout =*/
 .project-detail-main {
   width: 100%;
   box-sizing: border-box;
-  padding: 1rem;
+  margin-left:  30px;
   margin-top: 6rem;
 }
 
 
 .project-detail {
-  width: 41.67%; /* Equivalent to span 5 */
+  width: 44%; 
   float: left;
   display: flex;
   flex-direction: column;
@@ -350,52 +345,57 @@ main.contact-main {
 
 .project-detail .distressed {
   font-family: 'BaleteSemibold', serif;
-  font-size: 3.5rem;
-  color: #222;
-  line-height: 1.1;
+  font-size: 88px;
+  line-height: 0.9;
   margin: 0;
   font-weight: normal;
+  margin-bottom: -1.5rem
 }
 
 .project-detail .year {
-  font-size: 1.2rem;
-  color: #222;
-  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  margin-bottom: 0rem;
+  
 }
 
 .project-detail .category {
-  font-size: 1.1rem;
-  color: #222;
+  font-size: 1rem;
   line-height: 1.1;
   white-space: pre-line;
-  margin-bottom: 1rem;
+  margin-bottom: -0.65rem;
 }
 
 .project-detail .description {
-  font-size: 1.1rem;
-  color: #222;
-  line-height: 1.5;
-  margin: 0;
+  font-size: 1.rem;
+  line-height: 1.4;
+  margin-bottom: 0rem;
 }
 /* Scrollable Image Container */
 .zine-image-container {
-      width: 60%;
-      height: 100%;
-      position: relative;
-      overflow: hidden; /* Ensure content outside is hidden */
-    }
+  .zine-image-container {
+    width: 60%;
+    height: 100vh;           /* Fix the height to viewport */
+    position: fixed;         /* Fix it to the right side */
+    right: 0;                /* Align to the right */
+    top: 0;
+    overflow-y: auto;        /* Enable vertical scrolling */
+    background: transparent; 
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-right: 4rem;
+    padding-top: 2rem;
+  }
 
     .scrollable-content {
-      position: absolute;
-      top: 0;
-      right: 0;
-      height: 300vh; /* Make this taller to allow scrolling */
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end; /* Right align images */
-      padding-right: 4rem;
-      padding-top: 2rem;
+      .scrollable-content {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+      }
+      
     }
 
     .zine-image {
@@ -403,7 +403,7 @@ main.contact-main {
       max-width: 600px;
       margin-bottom: 4rem; /* Space between images */
       box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transform: rotate(2deg); /* Slight rotation for aesthetic */
+      transform: rotate(2deg); /* Slight rotation */
       transition: transform 0.3s ease;
     }
 
@@ -413,7 +413,6 @@ main.contact-main {
       display: block;
     }
 
-    /* Scrollbar styling for webkit browsers */
     ::-webkit-scrollbar {
       width: 8px;
     }
@@ -445,7 +444,7 @@ main.contact-main {
       background: #222;
       position: absolute;
       bottom: 0;
-      height: 0; /* Will be updated with JS */
+      height: 0; 
       transition: height 0.1s;
     }
 
