@@ -236,7 +236,7 @@ main.contact-main {
 
 
 .contact-image {
-  width: 200px;
+  width: 100px;
   height: auto;
   display: flex;
   align-items: center;
@@ -302,24 +302,6 @@ main.contact-main {
 
 }
 
-@media (max-width: 900px) {
-  .projects {
-    max-width: 100%;
-    padding: 0 1rem;
-  }
-  .project-row {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .project-row .distressed {
-    font-size: 1.5rem;
-    margin-right: 0;
-  }
-  .project-row .category {
-    font-size: 1rem;
-  }
-}
 
 /* WORK/PROJECT PREVIEW */
 #project-preview {
@@ -359,7 +341,7 @@ main.contact-main {
 
 
 .project-detail {
-  width: 44%; 
+  width: 42%; 
   float: left;
   display: flex;
   flex-direction: column;
@@ -412,9 +394,11 @@ main.contact-main {
 
 .zine-image-container {
   position: fixed;
-  top: 0;
+  top: 35px;
   right: 0;
-  width: 60vw;
+  width: 90px;
+  left: 40vw; /* This matches the width of .fixed-content */
+  width: 70vw;
   height: 100vh;
   overflow-y: auto;
   background: transparent;
@@ -428,7 +412,7 @@ main.contact-main {
 
 .zine-image {
   width: 100%;
-  max-width: 500px;
+  max-width: 1050px;
   margin-bottom: 4rem;
   display: block;
 }
