@@ -108,17 +108,47 @@ a:focus {
 
 /* HOMEPAGE */
 body.home h1 {
-  font-size: 5.1rem;
-  font-weight: 400;
+  font-size: 75px;
+  font-weight: 200;
   line-height: 1.1;
   margin: 0;
-  margin-top: 400px;
-  margin-bottom: 50px;
+  margin-top: 250px;
+  margin-bottom: 00px;
 }
-
 body.home .bio {
   width: 100%;
 }
+.home-section {
+  position: sticky;
+  position: -webkit-sticky;
+  top: 80px; /* Height of your fixed header */
+  min-height: 100vh;
+  background: #B6B1EF; /* Homepage background color */
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+}
+
+.work-section {
+  position: relative;
+  min-height: 100vh;
+  background: #F5F6EB; /* Work section background color */
+  z-index: 2;
+  margin-top: -500vh;    /* Pull up to overlap the home section */
+  padding-top: 100vh;    /* Push content below sticky home section */
+
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 3rem;
+}
+
 
 /* ABOUT PÁGINA */
 .intro-text {
@@ -397,7 +427,7 @@ main.contact-main {
   top: 35px;
   right: 0;
   width: 90px;
-  left: 40vw; /* This matches the width of .fixed-content */
+  left: 40vw; 
   width: 70vw;
   height: 100vh;
   overflow-y: auto;
