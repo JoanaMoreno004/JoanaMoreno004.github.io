@@ -133,8 +133,9 @@ body.home .bio {
 
 body, html {
   height: 100%;
-  overflow: hidden; /* Prevenir scrool */
+  
 }
+
 
 .photo-stack {
   position: fixed;
@@ -173,6 +174,7 @@ main.contact-main {
   padding-left: 0;
   padding-right: 1rem; 
   margin-top: 6rem;
+  
 }
 
 
@@ -182,6 +184,7 @@ main.contact-main {
   padding-top: 7rem;
   padding-left: 6rem;
   font-size: 6px;
+  
 }
 
 
@@ -393,125 +396,52 @@ main.contact-main {
   line-height: 1.4;
   margin-bottom: 0rem;
 }
-/* IMAGEM COM SCROOL */
+
+
+.fixed-content {
+  position: fixed;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  overflow: hidden
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .zine-image-container {
-  .zine-image-container {
-    width: 60%;
-    height: 100vh;           /* Fix the height to viewport */
-    position: fixed;         /* Fix it to the right side */
-    right: 0;                /* Align to the right */
-    top: 0;
-    overflow-y: auto;        /* Enable vertical scrolling */
-    background: transparent; 
-    z-index: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    padding-right: 4rem;
-    padding-top: 2rem;
-  }
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 60vw;
+  height: 100vh;
+  overflow-y: auto;
+  background: transparent;
+  padding: 2rem;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  z-index: 5;
+}
 
-    .scrollable-content {
-      .scrollable-content {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-end;
-      }
-      
-    }
+.zine-image {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 4rem;
+  display: block;
+}
 
-    .zine-image {
-      width: 80%;
-      max-width: 600px;
-      margin-bottom: 4rem; /* Space between images */
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transform: rotate(2deg); /* Slight rotation */
-      transition: transform 0.3s ease;
-    }
+/* scroolbar customizada */
+.zine-image-container::-webkit-scrollbar {
+  width: 8px;
+}
+.zine-image-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.zine-image-container::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 4px;
+}
 
-    .zine-image img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    ::-webkit-scrollbar {
-      width: 8px;
-    }
-
-    ::-webkit-scrollbar-track {
-      background: transparent;
-    }
-
-    ::-webkit-scrollbar-thumb {
-      background: rgba(0,0,0,0.2);
-      border-radius: 4px;
-    }
-
-    .scroll-indicator {
-      position: fixed;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      width: 2px;
-      height: 100px;
-      background: rgba(0,0,0,0.1);
-      border-radius: 1px;
-      z-index: 5;
-    }
-
-    .scroll-progress {
-      width: 100%;
-      background: #222;
-      position: absolute;
-      bottom: 0;
-      height: 0; 
-      transition: height 0.1s;
-    }
-
-  
-    .scroll-hint {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      opacity: 1;
-      transition: opacity 0.5s;
-      z-index: 5;
-    }
-
-    .scroll-hint.hidden {
-      opacity: 0;
-    }
-
-    .scroll-icon {
-      width: 20px;
-      height: 40px;
-      border: 2px solid #222;
-      border-radius: 10px;
-      position: relative;
-      margin-bottom: 8px;
-    }
-
-    .scroll-icon:before {
-      content: '';
-      position: absolute;
-      top: 6px;
-      left: 50%;
-      width: 4px;
-      height: 4px;
-      background: #222;
-      border-radius: 50%;
-      transform: translateX(-50%);
-      animation: scrollHint 1.5s infinite;
-    }
-
-    .scroll-text {
-      font-size: 0.8rem;
-      color: #222;
-    }
-
-    
