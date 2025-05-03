@@ -31,6 +31,7 @@ body {
   padding: 0;
   min-height: 100vh;
   background: #F5F6EB; /* Cor base para todas as páginas */
+
 }
 
 body.home {
@@ -64,7 +65,9 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  background: transparent;
+  background:#F5F6EB;
+
+  
 }
 .logo a{
   font-size: 1.1rem;
@@ -107,6 +110,10 @@ a:focus {
 }
 
 /* HOMEPAGE */
+body.home {
+  overflow: hidden;
+}
+
 body.home h1 {
   font-size: 75px;
   font-weight: 200;
@@ -117,6 +124,9 @@ body.home h1 {
 }
 body.home .bio {
   width: 100%;
+}
+body.home header {
+  background: #B6B1EF; /* Homepage background color */
 }
 .home-section {
   position: sticky;
@@ -135,7 +145,7 @@ body.home .bio {
   line-height: 1.2;
 
 }
-
+/*WORK PÁGINA*/
 .work-section {
   position: relative;
   min-height: 100vh;
@@ -365,19 +375,19 @@ main.contact-main {
 .project-detail-main {
   width: 100%;
   box-sizing: border-box;
-  margin-left:  30px;
+  margin-left:  20px;
   margin-top: 6rem;
 }
 
-
 .project-detail {
-  width: 42%; 
+  width: 35%; 
   float: left;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
   gap: 1.5rem;
+  background: transparent;
 }
 
 
@@ -388,12 +398,13 @@ main.contact-main {
   margin: 0;
   font-weight: normal;
   margin-bottom: -1.5rem
+  
 }
 
 .project-detail .year {
   font-size: 1rem;
   margin-bottom: 0rem;
-  
+  background: transparent;
 }
 
 .project-detail .category {
@@ -401,6 +412,7 @@ main.contact-main {
   line-height: 1.1;
   white-space: pre-line;
   margin-bottom: -0.65rem;
+  background: transparent;
 }
 
 .project-detail .description {
@@ -420,15 +432,16 @@ main.contact-main {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background: transparent;
 }
 
-.zine-image-container {
+.work-image-container {
   position: fixed;
   top: 35px;
   right: 0;
   width: 90px;
   left: 40vw; 
-  width: 70vw;
+  width: 60vw;
   height: 100vh;
   overflow-y: auto;
   background: transparent;
@@ -440,9 +453,9 @@ main.contact-main {
   z-index: 5;
 }
 
-.zine-image {
+.work-image {
   width: 100%;
-  max-width: 1050px;
+  max-width: 1020px;
   margin-bottom: 4rem;
   display: block;
 }
