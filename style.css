@@ -392,6 +392,10 @@ body, html {
 }
 
 /* CONTACT - PÁGINA DOS CONTACTOS */
+body.contact {
+  overflow: hidden;
+}
+
 main.contact-main {
   width: 100%;
   box-sizing: border-box;
