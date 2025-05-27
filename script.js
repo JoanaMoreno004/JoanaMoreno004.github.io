@@ -26,7 +26,7 @@ Docente - Marco Heleno
   
   // PROJECT/WORK PREVIEW ON HOVER
   const preview = document.getElementById('project-preview');
-  const titles = document.querySelectorAll('.project-row .distressed a');
+  const titles = document.querySelectorAll('.project-row .BaleteTypo a');
 
   if (preview && titles.length > 0) {
     titles.forEach(link => {
