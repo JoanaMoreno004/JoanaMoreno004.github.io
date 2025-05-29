@@ -23,11 +23,26 @@ Docente - Marco Heleno
 */
 
 /* DESIGN BASE PARA TODAS AS PÁGINAS*/
+
 body {
+  background-color:#f3f3e5;
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-  font: #2D262D
+  font: #2D262D;
+  cursor: url('cursor/mycursor.svg'), auto;
+}
+
+
+/* cursor*/
+.custom-cursor {
+  cursor: url('cursor/mycursor.svg'), auto;
 
 }
+
+/* Cursor diferente ao passar por links e botões 
+a:hover, button:hover {
+  cursor: url('cursor/mycursor-hover.svg'), auto;
+}*/
+
 
 .container {
   width: 100%;
@@ -55,7 +70,7 @@ header {
   top: 0;
   left: 0;
   z-index: 10;
-  background:#FFFF;
+  background:#f3f3e5;
 
 }
 
@@ -98,26 +113,27 @@ body.home {
 }
 
 body.home h1 {
-  
-  margin-top: -0.5rem;
-  font-size: 50px;
+  margin-top: -0.3rem;
+  font-size: 60px;
   font-weight: 200;
+  letter-spacing: -2.5px;
+  line-height: 1;
 }
 
 /* WORK - PÁGINA DOS TRABALHOS */
 .work-section {
   position: relative;
-  background: #F5F6EB; /* Work section background color */ 
+  background: #f1ebf6; /* Work section background color */ 
 }
 
 /* WORK - PÁGINA DE PROJETOS */
 .projects {
   width: 100%;
   max-width: 100px;
-  margin-top: 25px;
+  margin-top: 55px;
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;
+  gap: 1.8rem;
 }
 
 .project {
@@ -127,17 +143,22 @@ body.home h1 {
 .project-row {
   width: 100%;
   display: flex;
-  gap: 1rem;
-  height: 55px;
+  gap: 1.2rem;
+  height: 65px;
  
 }
 
 .project-row .BaleteTypo {
   font-size: 69px;
   font-family: 'BaleteSemibold', serif;
-  line-height: 0.4;
+  line-height: 0.3;
   white-space: nowrap;
-  margin-right: 0rem;
+  margin-right: -0.2rem;
+  /*transition:
+    font-size 0.2s ease,
+    letter-spacing 0.2s ease,
+    transform 0.1s ease,
+    color 0.3s ease;*/
 }
 
 .project-row .category {
@@ -150,6 +171,12 @@ body.home h1 {
 .BaleteTypo:hover {
   font-family: 'BaleteBoldItalic', serif;
   font-weight: bold;
+  font-size: 69px;                        /* animated */
+  /*letter-spacing: -0.2px;                  
+  transform: scale(1.9rem);*/
+
+  
+  
 }
 
 /* WORK - PRÉ VISUALIZAÇÃO DOS PROJETOS QUANDO SE DÁ HOVER (WORK - PROJECT PREVIEW) */
@@ -283,9 +310,11 @@ body.home h1 {
 /* ABOUT - PÁGINA SOBRE MIM */
 .intro-text {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-  font-size: 3.9rem;
-  line-height: 1.1;
   margin-top: -0.3rem;
+  font-size: 57px;
+  font-weight: 200;
+  letter-spacing: -2.5px;
+  line-height: 1;
 
 }
 
@@ -293,6 +322,16 @@ body, html {
   height: 100%;
   
 }
+
+.contacts {
+  position: fixed;
+  padding: 1.2rem;
+  bottom: 2px;
+  display: flex;
+  gap: 9rem;
+  font-size: 24px;
+}
+
 
 .photo-stack {
   position: fixed;
@@ -321,92 +360,4 @@ body, html {
   display: block;
   max-width: 400px;
 }
-
-/* CONTACT - PÁGINA DOS CONTACTOS */
-body.contact {
-  overflow: hidden;
-}
-
-main.contact-main {
-  width: 100%;
-  box-sizing: border-box;
-  padding-left: 0;
-  padding-right: 1rem; 
-  margin-top: 6rem;
-  
-}
-
-.contact-text {
-  width: 260px;
-  float: left;
-  padding-top: 7rem;
-  padding-left: 6rem;
-  font-size: 6px;
-  
-}
-
-.contact-row {
-  gap: 3rem;
-  width: 100%;
-  align-items: center;
-}
-
-.contact-row h1 {
-  font-family: 'BaleteSemibold', serif;
-  font-size: 6rem;
-  color: #222;
-  line-height: 0.7;
-  margin: 0;
-  white-space: nowrap;
-  font-weight: normal;
-}
-
-.contact-details {
-  list-style: none;
-  padding: 0;
-  margin: 1.9rem 0 0 0;
-  display: flex;
-  flex-direction: row;
-  gap: 3rem;
-  min-width: 0.1px;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.contact-details li {
-  margin: 0;
-}
-
-.contact-details a {
-  color: #222;
-  font-size: 1rem;
-  text-decoration: none;
-  transition: color 0.2s;
-  
-}
-
-.contact-details a:hover {
-  color: #666;
-  text-underline-position: below;
-}
-
-
-.contact-image {
-  width: 100px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  padding-right: 0;
-}
-
-.contact-image img {
-  width: 450px;
-  height: auto;
-  display: block;
-  border-radius: 0;
-  transition: transform 0.3s;
-  transform: rotate(10deg) translateX(800px) translateY(0px);
-  }
-  
 
