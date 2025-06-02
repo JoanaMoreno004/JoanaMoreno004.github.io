@@ -74,6 +74,10 @@ header {
 
 }
 
+header a:hover{
+  text-decoration: underline;
+}
+ 
 nav.links {
   display: flex;
   gap: 5rem;
@@ -91,6 +95,13 @@ nav.links {
   font-family: 'BaleteBoldItalic';
   src: url('fonts/BaleteTrial-BoldItalic copy.otf') format('opentype');
   font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'BaleteSemiBoldItalic';
+  src: url('fonts/BaleteTrial-SemiboldItalic copy.otf') format('opentype');
+  font-weight: normal;
   font-style: italic;
 }
 
@@ -119,6 +130,14 @@ body.home h1 {
   letter-spacing: -2.5px;
   line-height: 1;
 }
+
+.JoanaTypo {
+  font-family: 'BaleteSemiBoldItalic', serif;
+  font-size: 65px; /* ou outro tamanho conforme o layout */
+  font-weight: normal; /* usa 'normal' se estás a usar uma fonte custom com peso fixo */
+  letter-spacing: 2px;
+}
+
 
 /* WORK - PÁGINA DOS TRABALHOS */
 .work-section {
@@ -183,10 +202,10 @@ body.home h1 {
 #project-preview {
   display: none;
   position: fixed;
-  top: 120px;
-  right: 40px;
-  width: 340px;
-  height: 420px;
+  top: 88px;
+  right: 60px;
+  width: 520px;
+  height: 610px;
   background: #fff;
   overflow: hidden;
   z-index: 1000;
@@ -216,7 +235,7 @@ body.home h1 {
 }
 
 .project-detail {
-  width: 25%; 
+  width: 32%; 
   float: left;
   display: flex;
   flex-direction: column;
@@ -252,7 +271,7 @@ body.home h1 {
 
 .project-detail .description {
   font-size: 1.rem;
-  line-height: 1.4;
+  line-height: 1.3;
   margin-bottom: 0rem;
 }
 
@@ -280,7 +299,7 @@ body.home h1 {
   height: 100vh;
   overflow-y: auto;
   background: transparent;
-  padding: 2rem;
+  padding: 1rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -293,6 +312,10 @@ body.home h1 {
   max-width: 1020px;
   margin-bottom: 4rem;
   display: block;
+}
+
+ .work-image:hover {
+  transform: scale(1.03) rotate(1.5deg);
 }
 
 /* WORK - SCROOLBAR DENTRO DA INFROMAÇÃO DE CADA PROJETO (SCROOLBAR PROJECT DETAIL) */
@@ -330,8 +353,12 @@ body, html {
   display: flex;
   gap: 9rem;
   font-size: 24px;
+  z-index: 3; /* Ensure it’s on top */
 }
 
+.contacts a:hover {
+  text-decoration: underline;
+}
 
 .photo-stack {
   position: fixed;
@@ -361,3 +388,31 @@ body, html {
   max-width: 400px;
 }
 
+#email_container 
+{
+  display: inline-block;
+}
+
+#email_container button {
+  position: absolute;
+  top: -15px; /* ajusta conforme necessário */
+  left: 2.5%;
+  width: 100px;
+  height: 35px; /* aumenta a altura */
+  display: none; /* aparece só com hover */
+
+/* Estilo do botão */
+  background-color: #2D262D; /* muda a cor de fundo*/
+  color: #f1ebf6; /* cor do texto */
+  border-radius: 0px;
+  border: 2px solid #2D262D; /* borda sólida da mesma cor do fundo */
+  box-shadow: none;           /* remove sombras */
+  background-image: none;     /* remove possíveis gradientes */
+  outline: none; 
+  cursor: pointer; /* cursor de mãozinha */
+}
+
+#email_container button:hover {
+  background-color: #f1ebf6; /* verde escuro */
+  border-color: #f1ebf6; /* borda verde escuro */
+}

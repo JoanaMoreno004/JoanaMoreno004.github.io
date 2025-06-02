@@ -4,8 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joana Moreno Portfolio</title>
+
+  <!-- Only include CSS once -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- p5.js and custom script -->
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.11.5/lib/p5.min.js"></script>
+  <script src="sketch.js" defer></script>
+  <script src="script.js" defer></script>
 </head>
+
 <body>
   <div class="container">
     <header>
@@ -14,34 +22,38 @@
         <a href="work.html">Work</a>
         <a href="about.html">About</a>
       </nav>
-    <div>
-      <a href="mailto:youremail@example.com">Email </a>
-    </div>
-  </header>
+      <div>
+        <a href="mailto:youremail@example.com">Email</a>
+      </div>
+    </header>
+
     <main class="about-main">
-        <div class="intro-text">
-          Hi! My name is Joana. I'm a Graphic & Multimedia designer and Illustrator based in Portugal with an interest for creating interactive and playful design. Lately, I’ve been focusing on Design, Motion Graphics and Illustration, where I strive to blend functionality with creativity.
-        </div>
-      </section>
+      <div class="intro-text">
+        Hi! My name is Joana. I'm a Graphic & Multimedia designer and Illustrator based in Portugal with an interest for creating interactive and playful design. Lately, I’ve been focusing on Design, Motion Graphics and Illustration, where I strive to blend functionality with creativity.
+      </div>
+
       <section class="photo-stack">
         <div class="composition">
           <div class="photo"><img src="photos-about/photo1.jpg" alt="Photo weird child eating cake"></div>
-          <div class="photo"><img src="photos-about/photo4.png" alt="Photo ilustration"></div>
+          <div class="photo"><img src="photos-about/photo4.png" alt="Photo illustration"></div>
           <div class="photo"><img src="photos-about/photo2.jpg" alt="Photo heidi core"></div>
           <div class="photo"><img src="photos-about/photo3.png" alt="Photo card"></div>
-
           <div class="photo"><img src="photos-about/photo5.png" alt="Photo me"></div>
         </div>
       </section>
-      
     </main>
+
     <footer class="contacts">
-      <a href="mailto:joanamoreno004@gmail.com">joanamoreno004@gmail.com </a>
-      <a href="mailto:joanamoreno004@gmail.com">@ju.ana_ </a>
-      <span>CV</span>
+      <div id="email_container" onmouseover="showEmailButton()" onmouseout="hideEmailButton()">
+        <a id="email" href="mailto:joanamoreno004@gmail.com">joanamoreno004@gmail.com</a>
+      </div>
+
+      <!-- Instagram link -->
+      <a href="https://www.instagram.com/_ju.ana/" target="_blank">@ju_ana</a>
+
+      <!-- CV download link -->
+      <a href="files/cv.pdf" target="_blank"> CV</a>
     </footer>
-    
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
