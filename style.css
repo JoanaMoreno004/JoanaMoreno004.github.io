@@ -121,6 +121,11 @@ a:focus {
 /* HOMEPAGE */
 body.home {
   overflow: hidden;
+  background-color: #B6B1EF;
+}
+
+body.home header {
+  background-color: #B6B1EF;
 }
 
 body.home h1 {
@@ -148,7 +153,7 @@ body.home h1 {
 /* WORK - PÁGINA DE PROJETOS */
 .projects {
   width: 100%;
-  max-width: 100px;
+  /* max-width: 100px; */
   margin-top: 55px;
   display: flex;
   flex-direction: column;
@@ -281,7 +286,7 @@ body.home h1 {
   top: 0;
   left: 0;
   box-sizing: border-box;
-  overflow: hidden
+  overflow: hidden;
   z-index: 10;
   display: flex;
   flex-direction: column;
@@ -330,6 +335,7 @@ body.home h1 {
   border-radius: 4px;
 }
 
+
 /* ABOUT - PÁGINA SOBRE MIM */
 .intro-text {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
@@ -353,11 +359,40 @@ body, html {
   display: flex;
   gap: 9rem;
   font-size: 24px;
-  z-index: 3; /* Ensure it’s on top */
+  z-index: 10; /* Ensure it’s on top */
 }
 
 .contacts a:hover {
   text-decoration: underline;
+}
+
+#email_container 
+{
+  display: inline-block;
+}
+
+#email_container button {
+  position: absolute;
+  top: -15px; /* ajusta conforme necessário */
+  left: 2.5%;
+  width: 100px;
+  height: 35px; /* aumenta a altura */
+  display: none; /* aparece só com hover */
+
+/* Estilo do botão */
+  background-color: #2D262D; /* muda a cor de fundo*/
+  color: #f1ebf6; /* cor do texto */
+  border-radius: 0px;
+  border: 2px solid #2D262D; /* borda sólida da mesma cor do fundo */
+  box-shadow: none;           /* remove sombras */
+  background-image: none;     /* remove possíveis gradientes */
+  outline: none; 
+  cursor: pointer; /* cursor de mãozinha */
+}
+
+#email_container button:hover {
+  background-color: #B6B1EF; /* verde escuro */
+  border-color: #B6B1EF; /* borda verde escuro */
 }
 
 .photo-stack {
@@ -387,32 +422,130 @@ body, html {
   display: block;
   max-width: 400px;
 }
-
-#email_container 
-{
-  display: inline-block;
+@media (min-width: 768px) {
+  .project-preview-mobile {
+    display: none;
+  }
 }
 
-#email_container button {
-  position: absolute;
-  top: -15px; /* ajusta conforme necessário */
-  left: 2.5%;
-  width: 100px;
-  height: 35px; /* aumenta a altura */
-  display: none; /* aparece só com hover */
+@media (max-width: 768px) {
+  body {
+    background-color: #f3f3e5;
+  }
 
-/* Estilo do botão */
-  background-color: #2D262D; /* muda a cor de fundo*/
-  color: #f1ebf6; /* cor do texto */
-  border-radius: 0px;
-  border: 2px solid #2D262D; /* borda sólida da mesma cor do fundo */
-  box-shadow: none;           /* remove sombras */
-  background-image: none;     /* remove possíveis gradientes */
-  outline: none; 
-  cursor: pointer; /* cursor de mãozinha */
+  /* Esconder o preview de desktop */
+  #project-preview {
+    display: none !important;
+  }
+
+  /* Layout mobile dos projetos */
+  .projects {
+    gap: 2.5rem;
+  }
+
+  .project {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: none;
+    width: 100%;
+  }
+
+  .project-row {
+    flex-direction: column;
+    height: auto;
+    gap: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .project-row .BaleteTypo {
+    font-size: 32px;
+    line-height: 1.1;
+  }
+
+  .project-preview-mobile {
+    width: 100%;
+    height: 300px;
+    background-color: #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    order: -1; /* Mostra acima do título */
+  }
+
+  .project-preview-mobile img,
+  .project-preview-mobile video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .project-preview-mobile:empty::after {
+    content: "Image Preview";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    color: #666;
+    font-size: 14px;
+  }
+
+  .category {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  /* Página de detalhe do projeto */
+  .project-detail-main {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-left: 14px;
+    margin-top: 5rem;
+  }
+
+  .project-detail {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 1.5rem;
+    background: transparent;
+    width: 80%;
+  }
+
+  .work-image-container {
+    position: relative;
+    width: 100%;
+    height: auto;
+    left: 12px;
+    top: 12px;
+    padding-right: 1rem;
+    min-height: 200px; /* Garante que não colapse */
+  }
+
+  .work-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 2rem;
+  }
 }
 
-#email_container button:hover {
-  background-color: #f1ebf6; /* verde escuro */
-  border-color: #f1ebf6; /* borda verde escuro */
+@media (min-width: 769px) {
+  .project-detail {
+    position: fixed;
+    top: 5rem;
+    left: 2rem;
+    width: 32%;
+    overflow: hidden;
+    z-index: 3;
+  }
+
+  body.manifest-zine {
+    overflow: hidden;
+  }
+
+  .work-image-container {
+    overflow-y: auto;
+  }
 }

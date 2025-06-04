@@ -74,7 +74,7 @@ Docente - Marco Heleno
       { x: 130, y: 170, rotation: 8,  scale: 0.5 },
     ];9
     const revealDistance = 300;
-    let scrollPosition = 0;
+    let scrollPosition = revealDistance * photos.length; 
     const minScroll = 0;
     const maxScroll = revealDistance * photos.length;
 
