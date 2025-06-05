@@ -422,6 +422,8 @@ body, html {
   display: block;
   max-width: 400px;
 }
+
+/* work */
 @media (min-width: 768px) {
   .project-preview-mobile {
     display: none;
@@ -467,7 +469,7 @@ body, html {
     width: 100%;
     height: 300px;
     background-color: #ddd;
-    border-radius: 8px;
+    border-radius: 0px;
     overflow: hidden;
     order: -1; /* Mostra acima do título */
   }
@@ -529,23 +531,85 @@ body, html {
     display: block;
     margin-bottom: 2rem;
   }
+
+ 
+  /* Homepage */
+  body.home {
+    overflow: auto; /* Permite scroll no telemóvel */
+    padding: 0rem;
+  }
+
+  body.home h1 {
+    margin-top: -0.3rem;
+    font-size: 40px;
+    font-weight: 200;
+    letter-spacing: -1px;
+    line-height: 1;
+  }
+
+  .JoanaTypo {
+    font-size: 45px;
+    line-height: 1.2;
+    letter-spacing: 1px;
+  }
+
+  /* about */
+  body.about {
+    overflow: auto; /* Permitir scroll no mobile */
+    padding: 1rem;
+  }
+
+  .intro-text {
+    font-size: 36px;   /* Reduz o tamanho do texto */
+    letter-spacing: -1.5px;
+    line-height: 1.2;
+  }
+
+  .contacts {
+    position: relative;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 22px;
+    bottom: auto;
+    padding: 1.5rem;
+  }
+
+  .photo-stack {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 2rem;
+  }
+
+  .composition {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+  }
+
+  .photo img {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 @media (min-width: 769px) {
-  .project-detail {
+  .project-detail-main {
     position: fixed;
-    top: 5rem;
-    left: 2rem;
-    width: 32%;
-    overflow: hidden;
-    z-index: 3;
-  }
-
-  body.manifest-zine {
-    overflow: hidden;
+    top: 0px; /* ou o quanto for preciso para não colidir com o header */
+    width: 90%;
+    overflow: hidden; /* sem scroll */
+    z-index: 4;
   }
 
   .work-image-container {
     overflow-y: auto;
+    height: 100vh;
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 60vw;
+    box-sizing: border-box;
   }
 }
