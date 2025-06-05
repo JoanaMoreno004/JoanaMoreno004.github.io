@@ -86,21 +86,21 @@ nav.links {
 /* FONTES */
 @font-face {
   font-family: 'BaleteSemibold';
-  src: url('fonts/BaleteTrial-Semibold copy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-Semiboldcopy.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'BaleteBoldItalic';
-  src: url('fonts/BaleteTrial-BoldItalic copy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-BoldItaliccopy.otf') format('opentype');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'BaleteSemiBoldItalic';
-  src: url('fonts/BaleteTrial-SemiboldItalic copy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
@@ -199,8 +199,7 @@ body.home h1 {
   /*letter-spacing: -0.2px;                  
   transform: scale(1.9rem);*/
 
-  
-  
+
 }
 
 /* WORK - PRÉ VISUALIZAÇÃO DOS PROJETOS QUANDO SE DÁ HOVER (WORK - PROJECT PREVIEW) */
@@ -235,12 +234,12 @@ body.home h1 {
 .project-detail-main {
   width: 100%;
   box-sizing: border-box;
-  margin-left: 14px;
+  margin-left: 1px;
   margin-top: 5rem;
 }
 
 .project-detail {
-  width: 32%; 
+  width: 30%; 
   float: left;
   display: flex;
   flex-direction: column;
@@ -252,7 +251,7 @@ body.home h1 {
 
 .project-detail .BaleteTypo {
   font-family: 'BaleteSemibold', serif;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 0.9;
   margin: 0;
   font-weight: normal;
@@ -297,14 +296,12 @@ body.home h1 {
 .work-image-container {
   position: fixed;
   top: 35px;
-  right: 0;
-  width: 90px;
-  left: 40vw; 
+  right: 18px;
   width: 70vw;
   height: 100vh;
   overflow-y: auto;
   background: transparent;
-  padding: 1rem;
+  padding: 0rem;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -314,13 +311,15 @@ body.home h1 {
 
 .work-image {
   width: 100%;
-  max-width: 1020px;
+  max-width: none;
   margin-bottom: 4rem;
   display: block;
+
+
 }
 
  .work-image:hover {
-  transform: scale(1.03) rotate(1.5deg);
+  transform: scale(1.01) rotate(0.5deg);
 }
 
 /* WORK - SCROOLBAR DENTRO DA INFROMAÇÃO DE CADA PROJETO (SCROOLBAR PROJECT DETAIL) */
@@ -501,7 +500,7 @@ body, html {
     display: flex;
     flex-direction: column;
     box-sizing: border-box;
-    margin-left: 14px;
+    margin-left: 1px;
     margin-top: 5rem;
   }
 
@@ -512,18 +511,19 @@ body, html {
     text-align: left;
     gap: 1.5rem;
     background: transparent;
-    width: 80%;
+    width: 100%;
   }
 
   .work-image-container {
     position: relative;
     width: 100%;
     height: auto;
-    left: 12px;
+    left: 9px;
     top: 12px;
     padding-right: 1rem;
     min-height: 200px; /* Garante que não colapse */
   }
+  
 
   .work-image {
     width: 100%;
@@ -603,12 +603,5 @@ body, html {
     z-index: 4;
   }
 
-  .work-image-container {
-    overflow-y: auto;
-    height: 100vh;
-    position: fixed;
-    top: 50px;
-    width: 60vw;
-    box-sizing: border-box;
-  }
+
 }
