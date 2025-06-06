@@ -85,6 +85,13 @@ nav.links {
 
 /* FONTES */
 @font-face {
+  font-family: 'Alte Haas Grotesk';
+  src: url('fonts/AlteHaasGrotesk-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'BaleteSemibold';
   src: url('fonts/BaleteTrial-Semibold.woff') format('opentype');
   font-weight: normal;
