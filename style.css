@@ -632,8 +632,8 @@ body, html {
   /* Para telas até 1200px */
 @media (max-width: 1200px) {
   .composition {
-    transform: scale(0.9);
-    margin: 20px 200px 20px -60px; /* top, right, bottom, left */
+    transform: scale(1.4);
+    margin: 20px 700px 20px -100px; /* top, right, bottom, left */
   }
 }
 
