@@ -100,7 +100,7 @@ nav.links {
 
 @font-face {
   font-family: 'BaleteSemiBoldItalic';
-  src: url('fonts/BaleteTrial-SemiboldItalic copy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
@@ -318,21 +318,11 @@ body.home h1 {
 
 }
 
- .work-image:hover {
+ /*.work-image:hover {
   transform: scale(1.01) rotate(0.5deg);
-}
+}*/
 
-/* WORK - SCROOLBAR DENTRO DA INFROMAÇÃO DE CADA PROJETO (SCROOLBAR PROJECT DETAIL) */
-.zine-image-container::-webkit-scrollbar {
-  width: 8px;
-}
-.zine-image-container::-webkit-scrollbar-track {
-  background: transparent;
-}
-.zine-image-container::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
-  border-radius: 4px;
-}
+
 
 
 /* ABOUT - PÁGINA SOBRE MIM */
@@ -361,9 +351,20 @@ body, html {
   z-index: 10; /* Ensure it’s on top */
 }
 
+/* Links dentro do footer que NÃO são o CV continuam no fluxo normal */
+.contacts a:not(.cv-link) {
+  /* Sem mudanças, mantêm onde estão */
+}
+
+/* Link do CV — agora posicionado fixo, alinhado à direita, mesma altura do email do header */
+.contacts .cv-link {
+  
+}
+
 .contacts a:hover {
   text-decoration: underline;
 }
+
 
 #email_container 
 {
@@ -432,6 +433,13 @@ body, html {
 @media (max-width: 768px) {
   body {
     background-color: #f3f3e5;
+  
+  }
+  
+  nav.links {
+    display: flex;
+    justify-content: flex-start;
+    gap: 35px;
   }
 
   /* Esconder o preview de desktop */
@@ -560,18 +568,19 @@ body, html {
   }
 
   .intro-text {
-    font-size: 36px;   /* Reduz o tamanho do texto */
-    letter-spacing: -1.5px;
-    line-height: 1.2;
+    font-size: 28px;   /* Reduz o tamanho do texto */
+    letter-spacing: -1px;
+    line-height: 1.1;
   }
 
   .contacts {
     position: relative;
     flex-direction: column;
-    gap: 2rem;
-    font-size: 22px;
+    gap: 1rem;
+    font-size: 18px;
     bottom: auto;
     padding: 1.5rem;
+    left: -10px;
   }
 
   .photo-stack {
@@ -582,15 +591,23 @@ body, html {
     margin-top: 2rem;
   }
 
-  .composition {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
-  }
-
   .photo img {
     max-width: 100%;
     height: auto;
+  }
+}
+
+@media (max-width: 900px) {
+  .composition {
+    transform: scale(0.8);
+    margin: 110px 10px 20px -260px;
+  }
+}
+
+@media (max-width: 769px) {
+  .composition {
+    transform: scale(0.2);
+    margin: -610px 10px 20px -120px;
   }
 }
 

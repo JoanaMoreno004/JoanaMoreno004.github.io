@@ -187,5 +187,3 @@ function hideEmailButton()
 {
   email_button_element.hide();
 }
-
-
