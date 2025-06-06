@@ -86,7 +86,7 @@ nav.links {
 /* FONTES */
 @font-face {
   font-family: 'BaleteSemibold';
-  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-Semiboldcopy.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -100,7 +100,7 @@ nav.links {
 
 @font-face {
   font-family: 'BaleteSemiBoldItalic';
-  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-SemiboldItalic copy.otf') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
@@ -395,29 +395,23 @@ body, html {
 }
 
 .photo-stack {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;     /* centraliza verticalmente */
-  width: 100vw;            /* ocupa toda a largura da viewport */
-  height: 100vh;           /* ocupa toda a altura da viewport */
-  position: fixed;         /* para ficar fixo na tela, podes trocar por relative se não quiseres fixo */
-  top: 0;
-  left: 0;
-  overflow: hidden;        /* evita scroll se algo passar dos limites */
-  z-index: 2;              /* mantém acima do resto, se necessário */
+  align-items: center;
+  justify-content: center;
 }
 
 .composition {
-  width: 1000px;
-  height: 900px;
-  max-width: 95vw;
-  max-height: 90vh;
   position: relative;
-  transform-origin: center center;
-  transform: scale(1);
-  margin: 0 auto; /* centralizar horizontalmente */
+  width: 1150px;   /* Ajustar a composição*/
+  height: 700px;  /* Ajustar a composição */
+  max-width: 95vw;
+  max-height: 80vh;
 }
-
 .photo {
   position: absolute;
   will-change: transform;
@@ -439,8 +433,6 @@ body, html {
   body {
     background-color: #f3f3e5;
   }
-
-  header 
 
   /* Esconder o preview de desktop */
   #project-preview {
@@ -563,7 +555,8 @@ body, html {
 
   /* about */
   body.about {
-
+    overflow: auto; /* Permitir scroll no mobile */
+    padding: 1rem;
   }
 
   .intro-text {
@@ -580,40 +573,21 @@ body, html {
     bottom: auto;
     padding: 1.5rem;
   }
-  .composition {
-    transform-origin: center center;
-    transform: scale(0.9);
-  }
 
   .photo-stack {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative; /* manter relativa */
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden; /* evitar scroll */
-    margin: 0;  /* remover margens */
-  }
-  
-  .composition {
     position: relative;
-    width: 1150px;   /* igual ao desktop para manter layout */
-    height: 700px;
-    max-width: none; /* não limitar por vw para manter proporções */
-    max-height: none;
-    
-    /* centro + escala para caber no ecrã */
-    transform-origin: center center;
-    transform: scale(0.5); /* diminui para 50% (ajusta) */
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-top: 2rem;
   }
-  
-  /* Se necessário, centralizar o container pai com flex já está feito */
-  
-  body, html {
-    overflow: hidden; /* tira scroll geral no mobile */
+
+  .composition {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
   }
-  
+
   .photo img {
     max-width: 100%;
     height: auto;
@@ -629,26 +603,5 @@ body, html {
     z-index: 4;
   }
 
-  /* Para telas até 1200px */
-@media (max-width: 1200px) {
-  .composition {
-    transform: scale(1);
-    margin: 0px 0px 0px 0px; /* top, right, bottom, left */
-  }
-}
 
-/* Para telas até 900px */
-@media (max-width: 900px) {
-  .composition {
-    transform: scale(0.7);
-    margin: 160px 20px 10px -220px;
-  }
-}
-
-/* Para telas até 600px */
-@media (max-width: 600px) {
-  .composition {
-    transform: scale(0.4);
-    margin: 10px 10px 10px 10px;
-  }
 }
