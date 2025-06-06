@@ -396,26 +396,26 @@ body, html {
 
 .photo-stack {
   display: flex;
-  justify-content: center; /* centra horizontal */
-  align-items: center;     /* centra vertical */
-  width: 100vw;
-  height: 100vh;
-  position: fixed; /* para ocupar o ecrã todo */
+  justify-content: center; /* centraliza horizontalmente */
+  align-items: center;     /* centraliza verticalmente */
+  width: 100vw;            /* ocupa toda a largura da viewport */
+  height: 100vh;           /* ocupa toda a altura da viewport */
+  position: fixed;         /* para ficar fixo na tela, podes trocar por relative se não quiseres fixo */
   top: 0;
   left: 0;
-  overflow: hidden;
-  z-index: 2;
+  overflow: hidden;        /* evita scroll se algo passar dos limites */
+  z-index: 2;              /* mantém acima do resto, se necessário */
 }
 
 .composition {
+  width: 1000px;
+  height: 900px;
+  max-width: 95vw;
+  max-height: 90vh;
   position: relative;
-  width: 90vw;         /* ocupa até 90% da largura do ecrã */
-  max-width: 1000px;   /* nunca passa disto */
-  height: auto;        /* ajusta altura automaticamente */
-  max-height: 90vh;    /* nunca passa de 90% da altura do ecrã */
-  margin: 0;           /* remove margens */
   transform-origin: center center;
-  transform: none;     /* remove transformações */
+  transform: scale(1);
+  margin: 0 auto; /* centralizar horizontalmente */
 }
 
 .photo {
@@ -629,5 +629,26 @@ body, html {
     z-index: 4;
   }
 
+  /* Para telas até 1200px */
+@media (max-width: 1200px) {
+  .composition {
+    transform: scale(0.9);
+    margin: 20px 200px 20px -60px; /* top, right, bottom, left */
+  }
+}
 
+/* Para telas até 900px */
+@media (max-width: 900px) {
+  .composition {
+    transform: scale(0.7);
+    margin: 160px 20px 10px -220px;
+  }
+}
+
+/* Para telas até 600px */
+@media (max-width: 600px) {
+  .composition {
+    transform: scale(0.4);
+    margin: 10px 10px 10px 10px;
+  }
 }
