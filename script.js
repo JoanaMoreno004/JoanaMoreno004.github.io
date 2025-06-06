@@ -57,11 +57,10 @@ Docente - Marco Heleno
   if (photoStack) {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
     const positions = [
-      { x: 80,  y: 90, rotation: -10, scale: 0.8 },
-      { x: 700, y: 200, rotation: 10, scale: 0.8 },
-      { x: 330, y: 150, rotation: 5, scale: 0.85 },
-      { x: 300, y: 390, rotation: -5, scale: 0.77 },
-      { x: 490, y: -8, rotation: 5, scale: 0.75 },
+      { x: 85,  y: 90, rotation: -10, scale: 0.8 },
+      { x: 655, y: 160, rotation: -1, scale: 0.85 },
+      { x: 310, y: 250, rotation: 7, scale: 0.85 },
+      { x: 430, y: -40, rotation: 5, scale: 0.75 },
       
     ];
 
