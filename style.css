@@ -86,7 +86,7 @@ nav.links {
 /* FONTES */
 @font-face {
   font-family: 'BaleteSemibold';
-  src: url('fonts/BaleteTrial-Semiboldcopy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
@@ -395,23 +395,29 @@ body, html {
 }
 
 .photo-stack {
-  position: fixed;
-  inset: 0;
+  display: flex;
+  justify-content: center; /* centra horizontal */
+  align-items: center;     /* centra vertical */
   width: 100vw;
   height: 100vh;
+  position: fixed; /* para ocupar o ecrã todo */
+  top: 0;
+  left: 0;
+  overflow: hidden;
   z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .composition {
   position: relative;
-  width: 1150px;   /* Ajustar a composição*/
-  height: 700px;  /* Ajustar a composição */
-  max-width: 95vw;
-  max-height: 80vh;
+  width: 90vw;         /* ocupa até 90% da largura do ecrã */
+  max-width: 1000px;   /* nunca passa disto */
+  height: auto;        /* ajusta altura automaticamente */
+  max-height: 90vh;    /* nunca passa de 90% da altura do ecrã */
+  margin: 0;           /* remove margens */
+  transform-origin: center center;
+  transform: none;     /* remove transformações */
 }
+
 .photo {
   position: absolute;
   will-change: transform;
@@ -433,6 +439,8 @@ body, html {
   body {
     background-color: #f3f3e5;
   }
+
+  header 
 
   /* Esconder o preview de desktop */
   #project-preview {
@@ -555,8 +563,7 @@ body, html {
 
   /* about */
   body.about {
-    overflow: auto; /* Permitir scroll no mobile */
-    padding: 1rem;
+
   }
 
   .intro-text {
@@ -573,21 +580,40 @@ body, html {
     bottom: auto;
     padding: 1.5rem;
   }
+  .composition {
+    transform-origin: center center;
+    transform: scale(0.9);
+  }
 
   .photo-stack {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative; /* manter relativa */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden; /* evitar scroll */
+    margin: 0;  /* remover margens */
   }
-
+  
   .composition {
-    width: 100%;
-    height: auto;
-    max-width: 100%;
+    position: relative;
+    width: 1150px;   /* igual ao desktop para manter layout */
+    height: 700px;
+    max-width: none; /* não limitar por vw para manter proporções */
+    max-height: none;
+    
+    /* centro + escala para caber no ecrã */
+    transform-origin: center center;
+    transform: scale(0.5); /* diminui para 50% (ajusta) */
   }
-
+  
+  /* Se necessário, centralizar o container pai com flex já está feito */
+  
+  body, html {
+    overflow: hidden; /* tira scroll geral no mobile */
+  }
+  
   .photo img {
     max-width: 100%;
     height: auto;
