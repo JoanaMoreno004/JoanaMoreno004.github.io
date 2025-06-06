@@ -86,21 +86,21 @@ nav.links {
 /* FONTES */
 @font-face {
   font-family: 'BaleteSemibold';
-  src: url('fonts/BaleteTrial-Semiboldcopy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-Semibold.woff') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
   font-family: 'BaleteBoldItalic';
-  src: url('fonts/BaleteTrial-BoldItaliccopy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-BoldItalic.woff') format('opentype');
   font-weight: bold;
   font-style: italic;
 }
 
 @font-face {
   font-family: 'BaleteSemiBoldItalic';
-  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
+  src: url('fonts/BaleteTrial-SemiboldItalic.woff') format('opentype');
   font-weight: normal;
   font-style: italic;
 }
