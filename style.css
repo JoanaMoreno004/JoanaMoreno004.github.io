@@ -23,7 +23,7 @@
 @font-face {
   font-family: 'BaleteSemibold'; /* Nome da fonte Balete Semibold */
   src: url('fonts/BaleteTrial-Semibold.woff') format('woff'); /* Localização do ficheiro da fonte */
-  font-weight: normal; /* Peso normal */
+  font-weight: 600;  /* Semibold normalmente é 600 */
   font-style: normal; /* Estilo normal */
   font-display: swap; /* Evita FOUT */
 }
@@ -31,7 +31,7 @@
 @font-face {
   font-family: 'BaleteBoldItalic'; /* Nome da fonte Balete Bold Italic */
   src: url('fonts/BaleteTrial-BoldItalic.woff') format('woff'); /* Localização do ficheiro da fonte */
-  font-weight: bold; /* Peso negrito */
+  font-weight: 700; /* Bold = 700 */
   font-style: italic; /* Estilo itálico */
   font-display: swap; /* Evita FOUT */
 }
@@ -39,10 +39,11 @@
 @font-face {
   font-family: 'BaleteSemiBoldItalic'; /* Nome da fonte Balete SemiBold Italic */
   src: url('fonts/BaleteTrial-SemiboldItalic.woff') format('woff'); /* Localização do ficheiro da fonte */
-  font-weight: normal; /* Peso normal */
+  font-weight: 600; /* Semibold = 600 */
   font-style: italic; /* Estilo itálico */
   font-display: swap; /* Evita FOUT */
 }
+
 
 /* Estilos base do body */
 body {
