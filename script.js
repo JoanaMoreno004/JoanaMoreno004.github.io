@@ -1,28 +1,17 @@
+/*------------------------------
+  Joana Moreno - Nº3220549  
+  Data: 04/05/2025
+  Nome do Exercício: Website Portfólio  
+  Época de Avaliação: Contínua (Durante as aulas)  
+  Ano Letivo: 3º Ano, 2024-2025  
+  Semestre: 2º  
+  Unidade Curricular: Laboratório de Projeto II  
+  Curso: Design Gráfico e Multimédia (DGM)  
+  Escola: Escola Superior de Artes e Design das Caldas da Rainha (ESAD.CR)  
+  Docente: Marco Heleno
+------------------------------*/
+
 document.addEventListener('DOMContentLoaded', function() {
-  /*
-Joana Moreno - Nº3220549
--
-
-Data - 04/05/2025
-
--
-
-Nome do Exercício
-Portfólio
--
-
-Época de Avaliação
-Contínua (Durante as aulas)
--
-
-Ano Letivo - 3º Ano, 2024-2025
-Semestre - 2º
-Unidade Curricular - Laboratório de Projeto II
-Curso - Design Gráfico e Multimédia (DGM)
-Escola - Escola Superior de Artes e Design das Caldas da Rainha (ESAD.CR)
-Docente - Marco Heleno
--
-*/
   
   // PROJECT/WORK PREVIEW ON HOVER
   const preview = document.getElementById('project-preview');
@@ -56,22 +45,23 @@ Docente - Marco Heleno
   const photoStack = document.querySelector('.photo-stack');
   if (photoStack) {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
-    const positions = [
-      { x: 85,  y: 90, rotation: -10, scale: 0.8 },
-      { x: 655, y: 160, rotation: -1, scale: 0.85 },
-      { x: 310, y: 250, rotation: 7, scale: 0.85 },
-      { x: 430, y: -40, rotation: 5, scale: 0.75 },
-      
+
+    const desktopPositions = [
+      { x: 85,  y: 90,  rotation: -10, scale: 0.8 },
+      { x: 655, y: 160, rotation: -1,  scale: 0.85 },
+      { x: 310, y: 250, rotation: 7,   scale: 0.85 },
+      { x: 430, y: -40, rotation: 5,   scale: 0.75 },
     ];
 
-    // Costumisar no telemóvel
     const mobilePositions = [
-      { x: 10,  y: 40,  rotation: -8, scale: 0.6 },
-      { x: 70,  y: 120, rotation: 7,  scale: 0.6 },
-      { x: 110, y: 30,  rotation: -4, scale: 0.55 },
-      { x: 60,  y: 200, rotation: 5,  scale: 0.65 },
-      { x: 130, y: 170, rotation: 8,  scale: 0.5 },
-    ];9
+      { x: 100,  y: 500,  rotation: -8, scale: 2 },
+      { x: 600,  y: 2100, rotation: 7,  scale: 2 },
+      { x: 200, y: 1600,  rotation: -4, scale: 2 },
+      { x: 500,  y: 1100, rotation: 5,  scale: 2 },
+    ];
+
+    let positionsToUse = window.innerWidth <= 768 ? mobilePositions : desktopPositions;
+
     const revealDistance = 300;
     let scrollPosition = revealDistance * photos.length; 
     const minScroll = 0;
@@ -79,7 +69,7 @@ Docente - Marco Heleno
 
     function updatePhotosOnScroll() {
       photos.forEach((photo, i) => {
-        const pos = positions[i] || positions[positions.length - 1] || { x: 0, y: 0, rotation: 0, scale: 1 };
+        const pos = positionsToUse[i] || positionsToUse[positionsToUse.length - 1] || { x: 0, y: 0, rotation: 0, scale: 1 };
         const start = i * revealDistance;
         const end = start + revealDistance;
         const rotation = pos.rotation !== undefined ? pos.rotation : 0;
@@ -95,7 +85,11 @@ Docente - Marco Heleno
         }
       });
     }
-    
+
+    window.addEventListener('resize', () => {
+      positionsToUse = window.innerWidth <= 768 ? mobilePositions : desktopPositions;
+      updatePhotosOnScroll();
+    });
 
     window.addEventListener('wheel', function(e) {
       scrollPosition += e.deltaY;
@@ -104,7 +98,6 @@ Docente - Marco Heleno
       e.preventDefault();
     }, { passive: false });
 
-  
     window.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowDown' || e.key === 'PageDown') {
         scrollPosition += 60;
@@ -119,70 +112,58 @@ Docente - Marco Heleno
   }
 });
 
-//ABOUT COPY EMAIL BOTÃO//
+
+
+// ABOUT COPY EMAIL BOTÃO //
 let email_container_element, email_a_element, email_button_element;
 let temp_input;
 
-
-function setup() 
-{
+function setup() {
   noCanvas();
-  
-  email_container_element = select ("#email_container");
-  
-  email_a_element = select ("#email");
-  
-  email_button_element = createButton ("Copy Email");
-  email_button_element.parent (email_container_element);
+
+  email_container_element = select("#email_container");
+  email_a_element = select("#email");
+
+  email_button_element = createButton("Copy Email");
+  email_button_element.parent(email_container_element);
   email_button_element.hide();
-  email_button_element.mousePressed (copyEmail);
+  email_button_element.mousePressed(copyEmail);
 }
 
-
-function copyEmail() 
-{
+function copyEmail() {
   temp_input = createInput();
-  temp_input.parent (email_container_element);
-  temp_input.value (email_a_element.html());
-  
+  temp_input.parent(email_container_element);
+  temp_input.value(email_a_element.html());
+
   try {
-    navigator.clipboard.writeText (temp_input.elt.select())
+    navigator.clipboard.writeText(temp_input.elt.select())
       .then(() => {
-          temp_input.remove();
-          email_button_element.hide();
-          console.log ("Email copied to clipboard (Clipboard API)");
+        temp_input.remove();
+        email_button_element.hide();
+        console.log("Email copied to clipboard (Clipboard API)");
       })
       .catch(err => {
-          console.error ("Clipboard API failed: ", err);
-          copyEmailFallback();
+        console.error("Clipboard API failed: ", err);
+        copyEmailFallback();
       });
-  } 
-  catch (err) {
-    console.error ("Clipboard API failed: ", err);
+  } catch (err) {
+    console.error("Clipboard API failed: ", err);
     copyEmailFallback();
   }
 }
 
-
-function copyEmailFallback() 
-{
+function copyEmailFallback() {
   temp_input.elt.select();
-  document.execCommand ('copy');
-  
+  document.execCommand('copy');
   temp_input.remove();
   email_button_element.hide();
-  
-  console.log ("Email copied to clipboard");
+  console.log("Email copied to clipboard");
 }
 
-
-function showEmailButton() 
-{
+function showEmailButton() {
   email_button_element.show();
 }
 
-
-function hideEmailButton() 
-{
+function hideEmailButton() {
   email_button_element.hide();
 }

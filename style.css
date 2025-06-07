@@ -1,403 +1,369 @@
-/*
-Joana Moreno - Nº3220549
--
+/*------------------------------
+  Joana Moreno - Nº3220549  
+  Data: 04/05/2025
+  Nome do Exercício: Website Portfólio  
+  Época de Avaliação: Contínua (Durante as aulas)  
+  Ano Letivo: 3º Ano, 2024-2025  
+  Semestre: 2º  
+  Unidade Curricular: Laboratório de Projeto II  
+  Curso: Design Gráfico e Multimédia (DGM)  
+  Escola: Escola Superior de Artes e Design das Caldas da Rainha (ESAD.CR)  
+  Docente: Marco Heleno
+------------------------------*/
 
-Data - 04/05/2025
+/* Fonts - definição das fontes usadas no site */
+@font-face {
+  font-family: 'AlteHaasGrotesk'; /* Nome da fonte Balete Semibold */
+  src: url('fonts/AlteHaasGrotesk-Regular.woff') format('woff'); /* Localização do ficheiro da fonte */
+  font-weight: normal; /* Peso normal */
+  font-style: normal; /* Estilo normal */
+  font-display: swap; /* Evita FOUT */
+}
 
--
+@font-face {
+  font-family: 'BaleteSemibold'; /* Nome da fonte Balete Semibold */
+  src: url('fonts/BaleteTrial-Semibold.woff') format('woff'); /* Localização do ficheiro da fonte */
+  font-weight: normal; /* Peso normal */
+  font-style: normal; /* Estilo normal */
+  font-display: swap; /* Evita FOUT */
+}
 
-Nome do Exercício
-WEebsite Portfólio 
--
+@font-face {
+  font-family: 'BaleteBoldItalic'; /* Nome da fonte Balete Bold Italic */
+  src: url('fonts/BaleteTrial-BoldItalic.woff') format('woff'); /* Localização do ficheiro da fonte */
+  font-weight: bold; /* Peso negrito */
+  font-style: italic; /* Estilo itálico */
+  font-display: swap; /* Evita FOUT */
+}
 
-Época de Avaliação
-Contínua (Durante as aulas)
--
+@font-face {
+  font-family: 'BaleteSemiBoldItalic'; /* Nome da fonte Balete SemiBold Italic */
+  src: url('fonts/BaleteTrial-SemiboldItalic.woff') format('woff'); /* Localização do ficheiro da fonte */
+  font-weight: normal; /* Peso normal */
+  font-style: italic; /* Estilo itálico */
+  font-display: swap; /* Evita FOUT */
+}
 
-Ano Letivo - 3º Ano, 2024-2025
-Semestre - 2º
-Unidade Curricular - Laboratório de Projeto II
-Curso - Design Gráfico e Multimédia (DGM)
-Escola - Escola Superior de Artes e Design das Caldas da Rainha (ESAD.CR)
-Docente - Marco Heleno
-*/
-
-/* DESIGN BASE PARA TODAS AS PÁGINAS*/
-
+/* Estilos base do body */
 body {
-  background-color:#f3f3e5;
-  font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-  font: #2D262D;
-  cursor: url('cursor/mycursor.svg'), auto;
+  background-color:#f3f3e5; /* Cor de fundo do body */
+  font-family: 'AlteHaasGrotesk', Helvetica, sans-serif; /* Família de fontes principal */
+  color: #2D262D; /* Cor do texto */
+  cursor: url('cursor/mycursor.svg'), auto; /* Cursor personalizado */
 }
 
-
-/* cursor*/
+/* Classe para cursor customizado */
 .custom-cursor {
-  cursor: url('cursor/mycursor.svg'), auto;
-
+  cursor: url('cursor/mycursor.svg'), auto; /* Aplica cursor personalizado */
 }
 
-/* Cursor diferente ao passar por links e botões 
-a:hover, button:hover {
-  cursor: url('cursor/mycursor-hover.svg'), auto;
-}*/
-
-
+/* Container principal que agrupa header, main e footer */
 .container {
-  width: 100%;
-  min-height: 100vh;
-  display: flex; /* Flexbox para estruturar a página */
-  flex-direction: column; /* header, main, footer Verticalmente */
+  width: 100%; /* Largura total */
+  min-height: 100vh; /* Altura mínima igual à altura da viewport */
+  display: flex; /* Usar flexbox para layout */
+  flex-direction: column; /* Layout em coluna */
 }
 
+/* Estilo do main */
 main {
-  flex: 1; 
-  padding: 0.5rem;
-  box-sizing: border-box;
-  margin-top: 2.4rem;
-
+  flex: 1; /* Expande para preencher espaço disponível */
+  padding: 0.5rem; /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui padding na largura total */
+  margin-top: 2.4rem; /* Espaço acima */
 }
 
+/* Estilo do header fixo */
 header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem;
-  box-sizing: border-box;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background:#f3f3e5;
-
+  width: 100%; /* Largura total */
+  display: flex; /* Usar flexbox */
+  justify-content: space-between; /* Espaço entre os itens */
+  align-items: center; /* Alinhar verticalmente ao centro */
+  padding: 1.2rem; /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui padding na largura */
+  position: fixed; /* Fixo no topo */
+  top: 0; /* Topo da viewport */
+  left: 0; /* Esquerda da viewport */
+  z-index: 10; /* Sobreposição acima de outros elementos */
+  background:#f3f3e5; /* Cor de fundo */
 }
 
+/* Links do header com efeito hover */
 header a:hover{
-  text-decoration: underline;
+  text-decoration: underline; /* Sublinhado ao passar o rato */
 }
- 
+
+/* Navegação de links no header */
 nav.links {
-  display: flex;
-  gap: 5rem;
+  display: flex; /* Layout em linha */
+  gap: 5rem; /* Espaçamento entre links */
 }
 
-/* FONTES */
-@font-face {
-  font-family: 'BaleteSemibold';
-  src: url('fonts/BaleteTrial-Semiboldcopy.otf') format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'BaleteBoldItalic';
-  src: url('fonts/BaleteTrial-BoldItaliccopy.otf') format('opentype');
-  font-weight: bold;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'BaleteSemiBoldItalic';
-  src: url('fonts/BaleteTrial-SemiboldItaliccopy.otf') format('opentype');
-  font-weight: normal;
-  font-style: italic;
-}
-
-/* LINK ESTILOS DESIGN BASE */
+/* Estilo dos links */
 a,
 a:visited {
-  color: #2D262D;
-  text-decoration: none;
-  transition: color 0.2s;
+  color: #2D262D; /* Cor dos links */
+  text-decoration: none; /* Sem sublinhado */
+  transition: color 0.2s; /* Transição suave na cor */
 }
 
 a:hover,
 a:focus {
-  text-decoration: none;
+  text-decoration: none; /* Continua sem sublinhado ao hover ou foco */
 }
 
-/* HOMEPAGE */
+/* Estilos específicos para a homepage */
 body.home {
-  overflow: hidden;
-  background-color: #B6B1EF;
+  overflow: hidden; /* Esconde scroll */
+  background-color: #B6B1EF; /* Cor de fundo especial para homepage */
 }
 
 body.home header {
-  background-color: #B6B1EF;
+  background-color: #B6B1EF; /* Cor de fundo do header na homepage */
 }
 
 body.home h1 {
-  margin-top: -0.3rem;
-  font-size: 60px;
-  font-weight: 200;
-  letter-spacing: -2.5px;
-  line-height: 1;
+  margin-top: -0.3rem; /* Margem superior negativa para ajustar posição */
+  font-size: 60px; /* Tamanho da fonte maior */
+  font-weight: 200; /* Peso da fonte leve */
+  letter-spacing: -2.5px; /* Espaçamento negativo entre letras */
+  line-height: 1; /* Altura da linha */
 }
 
+/* Classe para tipografia Joana */
 .JoanaTypo {
-  font-family: 'BaleteSemiBoldItalic', serif;
-  font-size: 65px; /* ou outro tamanho conforme o layout */
-  font-weight: normal; /* usa 'normal' se estás a usar uma fonte custom com peso fixo */
-  letter-spacing: 2px;
+  font-family: 'BaleteSemiBoldItalic', serif; /* Fonte personalizada Joana */
+  font-size: 65px; /* Tamanho grande */
+  font-weight: normal; /* Peso normal */
+  letter-spacing: 2px; /* Espaçamento entre letras */
 }
 
-
-/* WORK - PÁGINA DOS TRABALHOS */
+/* Seção Work (trabalhos/projetos) */
 .work-section {
-  position: relative;
-  background: #f1ebf6; /* Work section background color */ 
+  position: relative; /* Posicionamento relativo para filhos */
+  background: #f1ebf6; /* Cor de fundo da secção */
 }
 
-/* WORK - PÁGINA DE PROJETOS */
+
 .projects {
-  width: 100%;
-  /* max-width: 100px; */
-  margin-top: 55px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.8rem;
+  width: 100%; /* Largura total */
+  margin-top: 55px; /* Espaço acima */
+  display: flex; /* Layout flexível */
+  flex-direction: column; /* Organiza em coluna */
+  gap: 1.8rem; /* Espaçamento vertical entre projetos */
 }
 
 .project {
-  width: 100%;
+  width: 100%; /* Largura total do projeto */
 }
 
 .project-row {
-  width: 100%;
-  display: flex;
-  gap: 1.2rem;
-  height: 65px;
- 
+  width: 100%; /* Largura total */
+  display: flex; /* Layout flexível */
+  gap: 1.2rem; /* Espaçamento entre elementos na linha */
+  height: 65px; /* Altura fixa da linha do projeto */
 }
 
 .project-row .BaleteTypo {
-  font-size: 69px;
-  font-family: 'BaleteSemibold', serif;
-  line-height: 0.3;
-  white-space: nowrap;
-  margin-right: -0.2rem;
-  /*transition:
-    font-size 0.2s ease,
-    letter-spacing 0.2s ease,
-    transform 0.1s ease,
-    color 0.3s ease;*/
+  font-size: 69px; /* Tamanho da fonte */
+  font-family: 'BaleteSemibold', serif; /* Fonte Balete Semibold */
+  line-height: 0.3; /* Altura da linha compacta */
+  white-space: nowrap; /* Não quebra linha */
+  margin-right: -0.2rem; /* Margem negativa à direita para ajuste */
 }
 
 .project-row .category {
-  font-size: 1rem;
-  text-align: left;
-  flex-shrink: 0;
-
+  font-size: 1rem; /* Tamanho da fonte da categoria */
+  text-align: left; /* Alinhamento do texto à esquerda */
+  flex-shrink: 0; /* Não encolher na flexbox */
 }
 
+/* Efeito hover para o texto BaleteTypo */
 .BaleteTypo:hover {
-  font-family: 'BaleteBoldItalic', serif;
-  font-weight: bold;
-  font-size: 69px;                        /* animated */
-  /*letter-spacing: -0.2px;                  
-  transform: scale(1.9rem);*/
-
-
+  font-family: 'BaleteBoldItalic', serif; /* Fonte em itálico negrito */
+  font-weight: bold; /* Peso negrito */
+  font-size: 69px; /* Mesmo tamanho */
 }
 
-/* WORK - PRÉ VISUALIZAÇÃO DOS PROJETOS QUANDO SE DÁ HOVER (WORK - PROJECT PREVIEW) */
+/* Preview do projeto (normalmente imagem ou vídeo) */
 #project-preview {
-  display: none;
-  position: fixed;
-  top: 88px;
-  right: 60px;
-  width: 520px;
-  height: 610px;
-  background: #fff;
-  overflow: hidden;
-  z-index: 1000;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.18s;
+  display: none; /* Inicialmente escondido */
+  position: fixed; /* Posicionado fixamente na viewport */
+  top: 88px; /* Distância do topo */
+  right: 60px; /* Distância da direita */
+  width: 520px; /* Largura fixa */
+  height: 610px; /* Altura fixa */
+  background: #fff; /* Fundo branco */
+  overflow: hidden; /* Esconde overflow */
+  z-index: 1000; /* Sobreposição alta */
+  pointer-events: none; /* Não permite interações */
+  opacity: 0; /* Transparente */
+  transition: opacity 0.18s; /* Transição suave na opacidade */
 }
 
 #project-preview.active {
-  display: block;
-  opacity: 1;
+  display: block; /* Mostrar o preview quando ativo */
+  opacity: 1; /* Tornar opaco */
 }
 
 #project-preview img,
 #project-preview video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 100%; /* Preencher largura do container */
+  height: 100%; /* Preencher altura do container */
+  object-fit: cover; /* Cobre toda a área, mantendo proporções */
 }
 
-/* WORK - LAYOUT DA PÁGINA DE INFORMAÇÃO SOBRE OS PROJETOS (WORK - PROJECT DETAIL) */
+/* Container principal da página de detalhe do projeto */
 .project-detail-main {
-  width: 100%;
-  box-sizing: border-box;
-  margin-left: 1px;
-  margin-top: 5rem;
+  width: 100%; /* Largura total */
+  box-sizing: border-box; /* Inclui padding e bordas */
+  margin-left: 1px; /* Margem à esquerda pequena */
+  margin-top: 5rem; /* Espaço no topo para header */
 }
 
+/* Detalhes do projeto */
 .project-detail {
-  width: 30%; 
-  float: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
-  gap: 1.5rem;
-  background: transparent;
+  width: 30%; /* Ocupa 30% da largura */
+  float: left; /* Flutua para a esquerda */
+  display: flex; /* Flexbox para alinhamento */
+  flex-direction: column; /* Coluna vertical */
+  align-items: flex-start; /* Alinhamento à esquerda */
+  text-align: left; /* Texto alinhado à esquerda */
+  gap: 1.5rem; /* Espaçamento vertical */
+  background: transparent; /* Fundo transparente */
 }
 
 .project-detail .BaleteTypo {
-  font-family: 'BaleteSemibold', serif;
-  font-size: 40px;
-  line-height: 0.9;
-  margin: 0;
-  font-weight: normal;
-  margin-bottom: -1.7rem
-  
+  font-family: 'BaleteSemibold', serif; /* Fonte Balete Semibold */
+  font-size: 40px; /* Tamanho da fonte */
+  line-height: 0.9; /* Altura da linha */
+  margin: 0; /* Sem margens */
+  font-weight: normal; /* Peso normal */
+  margin-bottom: -1.7rem; /* Margem inferior negativa para ajuste */
 }
 
 .project-detail .year {
-  font-size: 1rem;
-  margin-bottom: 0rem;
-  background: transparent;
+  font-size: 1rem; /* Tamanho da fonte */
+  margin-bottom: 0rem; /* Sem margem inferior */
+  background: transparent; /* Fundo transparente */
 }
 
 .project-detail .category {
-  font-size: 1rem;
-  line-height: 1.1;
-  white-space: pre-line;
-  margin-bottom: -0.65rem;
-  background: transparent;
+  font-size: 1rem; /* Tamanho da fonte */
+  line-height: 1.1; /* Altura da linha */
+  white-space: pre-line; /* Preserva quebras de linha */
+  margin-bottom: -0.65rem; /* Margem inferior negativa */
+  background: transparent; /* Fundo transparente */
 }
 
 .project-detail .description {
-  font-size: 1.rem;
-  line-height: 1.3;
-  margin-bottom: 0rem;
+  font-size: 1.rem; /* Tamanho da fonte (tem um pequeno typo, mas não altero) */
+  line-height: 1.3; /* Altura da linha */
+  margin-bottom: 0rem; /* Sem margem inferior */
 }
 
-
+/* Conteúdo fixo no topo */
 .fixed-content {
-  position: fixed;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  overflow: hidden;
-  z-index: 10;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background: transparent;
+  position: fixed; /* Fixo na viewport */
+  top: 0; /* No topo */
+  left: 0; /* À esquerda */
+  box-sizing: border-box; /* Inclui padding/bordas */
+  overflow: hidden; /* Esconde overflow */
+  z-index: 10; /* Sobreposição */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Em coluna */
+  justify-content: flex-start; /* Justificar ao topo */
+  background: transparent; /* Fundo transparente */
 }
 
+/* Container para as imagens do projeto */
 .work-image-container {
-  position: fixed;
-  top: 35px;
-  right: 18px;
-  width: 70vw;
-  height: 100vh;
-  overflow-y: auto;
-  background: transparent;
-  padding: 0rem;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  z-index: 5;
+  position: fixed; /* Fixo na viewport */
+  top: 35px; /* Distância do topo */
+  right: 18px; /* Distância da direita */
+  width: 70vw; /* Largura relativa à viewport */
+  height: 100vh; /* Altura da viewport */
+  overflow-y: auto; /* Scroll vertical automático */
+  background: transparent; /* Fundo transparente */
+  padding: 0rem; /* Sem padding */
+  box-sizing: border-box; /* Inclui padding e bordas */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Coluna */
+  align-items: flex-end; /* Alinhado à direita */
+  z-index: 5; /* Sobreposição */
 }
 
 .work-image {
-  width: 100%;
-  max-width: none;
-  margin-bottom: 4rem;
-  display: block;
-
-
+  width: 100%; /* Largura total */
+  max-width: none; /* Sem limite máximo */
+  margin-bottom: 4rem; /* Espaço abaixo da imagem */
+  display: block; /* Display em bloco */
 }
 
- /*.work-image:hover {
+/* Comentado: efeito hover para imagem do trabalho */
+/* .work-image:hover {
   transform: scale(1.01) rotate(0.5deg);
-}*/
+} */
 
-
-
-
-/* ABOUT - PÁGINA SOBRE MIM */
+/* Página About (Sobre mim) */
 .intro-text {
-  font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-  margin-top: -0.3rem;
-  font-size: 56px;
-  font-weight: 200;
-  letter-spacing: -1.3px;
-  line-height: 1;
-
+  font-family: 'Alte Haas Grotesk', Arial, sans-serif; /* Fonte */
+  margin-top: -0.3rem; /* Margem negativa no topo */
+  font-size: 56px; /* Tamanho grande */
+  font-weight: 200; /* Peso leve */
+  letter-spacing: -1.3px; /* Espaçamento negativo */
+  line-height: 1; /* Altura da linha */
 }
 
+/* Garantir altura total para body e html */
 body, html {
-  height: 100%;
-  
+  height: 100%; /* Altura 100% da viewport */
 }
 
+/* Contatos fixos no ecrã */
 .contacts {
-  position: fixed;
-  padding: 1.2rem;
-  bottom: 2px;
-  display: flex;
-  gap: 9rem;
-  font-size: 24px;
-  z-index: 10; /* Ensure it’s on top */
+  position: fixed; /* Fixo na viewport */
+  padding: 1.2rem; /* Padding interno */
+  bottom: 2px; /* Distância do fundo */
+  display: flex; /* Flexbox */
+  gap: 9rem; /* Espaçamento entre contactos */
+  font-size: 24px; /* Tamanho do texto */
+  z-index: 10; /* Sobreposição */
 }
 
-/* Links dentro do footer que NÃO são o CV continuam no fluxo normal */
+
 .contacts a:not(.cv-link) {
-  /* Sem mudanças, mantêm onde estão */
+  /* Estilos para links que não sejam .cv-link (sem estilos específicos aqui) */
 }
 
-/* Link do CV — agora posicionado fixo, alinhado à direita, mesma altura do email do header */
+
 .contacts .cv-link {
-  
+  /* Estilos para o link do CV (sem estilos específicos aqui) */
 }
 
+/* Efeito hover para links em contatos */
 .contacts a:hover {
-  text-decoration: underline;
+  text-decoration: underline; /* Sublinhado ao passar o rato */
 }
 
-
+/* Container para o email com botão */
 #email_container 
 {
-  display: inline-block;
+  display: inline-block; /* Display inline-block para alinhar */
 }
 
+/* Botão escondido inicialmente */
 #email_container button {
-  position: absolute;
-  top: -15px; /* ajusta conforme necessário */
-  left: 2.5%;
-  width: 100px;
-  height: 35px; /* aumenta a altura */
-  display: none; /* aparece só com hover */
-
-/* Estilo do botão */
-  background-color: #2D262D; /* muda a cor de fundo*/
-  color: #f1ebf6; /* cor do texto */
-  border-radius: 0px;
-  border: 2px solid #2D262D; /* borda sólida da mesma cor do fundo */
-  box-shadow: none;           /* remove sombras */
-  background-image: none;     /* remove possíveis gradientes */
-  outline: none; 
-  cursor: pointer; /* cursor de mãozinha */
+  position: absolute; /* Posicionado absolutamente */
+  top: -15px; /* Acima do container */
+  left: 2.5%; /* Pequena distância da esquerda */
+  width: 100px; 
 }
 
-#email_container button:hover {
-  background-color: #B6B1EF; /* verde escuro */
-  border-color: #B6B1EF; /* borda verde escuro */
-}
-
+/* Camada fixa para a pilha de fotos */
 .photo-stack {
   position: fixed;
-  inset: 0;
+  inset: 0; /* topo, direita, baixo, esquerda = 0 */
   width: 100vw;
   height: 100vh;
   z-index: 2;
@@ -406,223 +372,251 @@ body, html {
   justify-content: center;
 }
 
+/* Composição das fotos */
 .composition {
   position: relative;
-  width: 1150px;   /* Ajustar a composição*/
-  height: 700px;  /* Ajustar a composição */
-  max-width: 95vw;
-  max-height: 80vh;
-}
-.photo {
-  position: absolute;
-  will-change: transform;
-}
-.photo img {
-  width: 100%;
-  display: block;
-  max-width: 400px;
+  width: 1150px;
+  height: 700px;
+  max-width: 95vw; /* Limita a largura máxima */
 }
 
-/* work */
+/* Foto */
+.photo {
+  position: absolute; /* Posicionamento absoluto para controle exato da foto */
+  will-change: transform; /* Otimização para transformações futuras */
+}
+.photo img {
+  width: 100%; /* A imagem ocupa 100% da largura do seu container */
+  display: block; /* Remove espaço em branco abaixo da imagem */
+  max-width: 400px; /* Limita a largura máxima da imagem */
+}
+
+/* Work */
+/* Estilos para telas maiores que 768px */
 @media (min-width: 768px) {
   .project-preview-mobile {
-    display: none;
+    display: none; /* Esconde a pré-visualização mobile em telas maiores */
   }
 }
 
+/* Estilos para telas até 768px */
 @media (max-width: 768px) {
   body {
-    background-color: #f3f3e5;
-
+    background-color: #f3f3e5; /* Cor de fundo para mobile */
   }
   
   nav.links {
-    display: flex;
-    justify-content: flex-start;
-    gap: 31px;
+    display: flex; /* Menu flexível */
+    justify-content: flex-start; /* Alinha os links à esquerda */
+    gap: 31px; /* Espaçamento entre links */
   }
 
-  /* Esconder o preview de desktop */
+  /* Esconder o preview de desktop no mobile */
   #project-preview {
-    display: none !important;
+    display: none !important; /* Força esconder mesmo se outro estilo tentar mostrar */
   }
 
   /* Layout mobile dos projetos */
   .projects {
-    width: 100%;
-    margin-top: 15px;
-    display: flex;           /* <-- aqui tens display flex */
-    flex-direction: column; 
-    gap: 2.5rem;
+    width: 100%; /* Ocupa toda a largura */
+    margin-top: 15px; /* Espaço acima */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Itens em coluna */
+    gap: 2.5rem; /* Espaçamento entre projetos */
   }
 
   .project {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    max-width: none;
-    width: 100%;
+    display: flex; /* Flex container */
+    flex-direction: column; /* Itens em coluna */
+    gap: 1rem; /* Espaçamento interno */
+    max-width: none; /* Remove limite de largura */
+    width: 100%; /* Ocupa toda a largura */
   }
 
   .project-row {
-    flex-direction: column;
-    height: auto;
-    gap: 0.5rem;
-    margin-bottom: 0;
+    flex-direction: column; /* Itens em coluna */
+    height: auto; /* Altura automática */
+    gap: 0.5rem; /* Espaçamento entre elementos */
+    margin-bottom: 0; /* Remove margem inferior */
   }
 
   .project-row .BaleteTypo {
-    font-size: 32px;
-    line-height: 1.1;
+    font-size: 32px; /* Tamanho da fonte maior */
+    line-height: 1.1; /* Espaçamento entre linhas */
   }
 
   .project-preview-mobile {
-    width: 100%;
-    height: 300px;
-    background-color: #ddd;
-    border-radius: 0px;
-    overflow: hidden;
-    order: -1; /* Mostra acima do título */
+    width: 100%; /* Largura total */
+    height: 300px; /* Altura fixa */
+    background-color: #ddd; /* Cor de fundo cinza claro */
+    border-radius: 0px; /* Sem bordas arredondadas */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa o container */
+    order: -1; /* Coloca este elemento antes dos irmãos na ordem do flex */
   }
 
   .project-preview-mobile img,
   .project-preview-mobile video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    width: 100%; /* Largura total */
+    height: 100%; /* Altura total */
+    object-fit: cover; /* Cobre todo o container sem distorcer */
   }
 
   .project-preview-mobile:empty::after {
-    content: "Image Preview";
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    color: #666;
-    font-size: 14px;
+    content: "Image Preview"; /* Texto exibido quando não há conteúdo */
+    display: flex; /* Flex container */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    height: 100%; /* Ocupa toda altura */
+    color: #666; /* Cor cinza escura */
+    font-size: 14px; /* Tamanho da fonte */
   }
 
   .category {
-    font-size: 0.9rem;
-    line-height: 1.2;
+    font-size: 0.9rem; /* Tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas */
   }
 
   /* Página de detalhe do projeto */
   .project-detail-main {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    margin-left: 1px;
-    margin-top: 5rem;
+    display: flex; /* Flex container */
+    flex-direction: column; /* Itens em coluna */
+    box-sizing: border-box; /* Inclui padding e border no tamanho */
+    margin-left: 1px; /* Pequena margem à esquerda */
+    margin-top: 5rem; /* Espaço no topo */
   }
 
   .project-detail {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    gap: 1.5rem;
-    background: transparent;
-    width: 100%;
+    display: flex; /* Flex container */
+    flex-direction: column; /* Itens em coluna */
+    align-items: flex-start; /* Alinha à esquerda */
+    text-align: left; /* Texto alinhado à esquerda */
+    gap: 1.5rem; /* Espaçamento entre elementos */
+    background: transparent; /* Fundo transparente */
+    width: 100%; /* Largura total */
   }
 
   .work-image-container {
-    position: relative;
-    width: 100%;
-    height: auto;
-    left: 9px;
-    top: 12px;
-    padding-right: 1rem;
-    min-height: 200px; /* Garante que não colapse */
+    position: relative; /* Posicionamento relativo para posicionar filhos */
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    left: 9px; /* Desloca para direita */
+    top: 12px; /* Desloca para baixo */
+    padding-right: 1rem; /* Espaço à direita */
+    min-height: 200px; /* Garante altura mínima para não colapsar */
   }
   
 
   .work-image {
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-bottom: 2rem;
+    width: 100%; /* Largura total */
+    height: auto; /* Altura automática */
+    display: block; /* Remove espaço em branco */
+    margin-bottom: 2rem; /* Espaço abaixo */
   }
 
- 
+
   /* Homepage */
   body.home {
     overflow: auto; /* Permite scroll no telemóvel */
-    padding: 0rem;
+    padding: 0rem; /* Sem padding */
   }
 
   body.home h1 {
-    margin-top: -0.3rem;
-    font-size: 40px;
-    font-weight: 200;
-    letter-spacing: -1px;
-    line-height: 1;
+    margin-top: -0.3rem; /* Margem superior negativa para ajustar posição */
+    font-size: 30px; /* Tamanho da fonte */
+    font-weight: 200; /* Peso da fonte leve */
+    letter-spacing: -1px; /* Espaçamento negativo entre letras */
+    line-height: 1; /* Altura da linha */
   }
 
   .JoanaTypo {
-    font-size: 45px;
-    line-height: 1.2;
-    letter-spacing: 1px;
+    font-size: 33px; /* Tamanho da fonte */
+    line-height: 1.2; /* Espaçamento entre linhas */
+    letter-spacing: 1px; /* Espaçamento entre letras */
   }
 
-  /* about */
+  /* About */
   body.about {
-    overflow: auto; /* Permitir scroll no mobile */
-    padding: 1rem;
+    overflow: auto; /* Permite scroll no mobile */
+    padding: 1rem; /* Espaço interno */
   }
 
   .intro-text {
-    font-size: 28px;   /* Reduz o tamanho do texto */
-    letter-spacing: -1px;
-    line-height: 1.1;
+    font-size: 23px; /* Reduz o tamanho do texto */
+    letter-spacing: -0.15px; /* Espaçamento entre letras */
+    line-height: 1.1; /* Espaçamento entre linhas */
+    margin-top: 1px; /* Margem superior pequena */
   }
 
   .contacts {
-    position: relative;
-    flex-direction: column;
-    gap: 1rem;
-    font-size: 18px;
-    bottom: auto;
-    padding: 1.5rem;
-    left: -10px;
+    position: fixed; /* Fixa no lugar */
+    bottom: 0; /* Na parte inferior da tela */
+    left: 0; /* Alinhado à esquerda */
+    display: flex; /* Flex container */
+    flex-direction: column; /* Itens em coluna */
+    align-items: flex-start; /* Alinhados à esquerda */
+    gap: 1rem; /* Espaçamento entre itens */
+    font-size: 18px; /* Tamanho da fonte */
+    padding: 1.5rem; /* Espaçamento interno */
+    z-index: 10; /* Fica acima de outros elementos */
   }
 
-  .photo-stack {
-    position: relative;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin-top: 2rem;
+  /* Estilos específicos para fotos em telas pequenas */
+  @media (max-width: 768px) {
+    .photo-stack {
+      position: relative; /* Posicionamento relativo */
+      width: 100%; /* Largura total */
+      height: auto; /* Altura automática */
+      display: flex; /* Flex container */
+      justify-content: center; /* Centraliza horizontalmente */
+      align-items: center; /* Centraliza verticalmente */
+      margin-top: 2rem; /* Margem superior */
+    }
+  
+    .composition {
+      width: 100%; /* Largura total */
+      max-width: 90vw; /* Máximo 90% da largura da viewport */
+      height: auto; /* Altura automática */
+      transform: none; /* Remove transformações */
+      margin: 0 auto; /* Centraliza horizontalmente */
+    }
+  
+    .photo img {
+      max-width: 100%; /* Largura máxima da imagem */
+      height: auto; /* Altura automática */
+    }
   }
 
+  /* Reforça para todas imagens dentro de .photo */
   .photo img {
-    max-width: 100%;
-    height: auto;
+    max-width: 100%; /* Largura máxima da imagem */
+    height: auto; /* Altura automática */
   }
 }
 
+/* Escala e posicionamento da composição em telas até 900px */
 @media (max-width: 900px) {
   .composition {
-    transform: scale(0.8);
-    margin: 110px 10px 20px -260px;
+    transform: scale(0.8); /* Reduz escala */
+    margin: 110px 10px 20px -260px; /* Margem personalizada */
   }
 }
 
+/* Escala e posicionamento da composição em telas até 769px */
 @media (max-width: 769px) {
   .composition {
-    transform: scale(0.2);
-    margin: -610px 10px 20px -120px;
+    transform: scale(0.2); /* Reduz escala ainda mais */
+    margin: -610px 10px 20px -120px; /* Margem personalizada */
   }
 }
 
+/* Estilos para telas maiores que 769px */
 @media (min-width: 769px) {
   .project-detail-main {
-    position: fixed;
-    top: 0px; /* ou o quanto for preciso para não colidir com o header */
-    width: 80%;
-    overflow: hidden; /* sem scroll */
-    z-index: 4;
+    position: fixed; /* Fixa o container */
+    top: 0px; /* No topo da tela */
+    width: 80%; /* Ocupa 80% da largura */
+    overflow: hidden; /* Remove scroll interno */
+    z-index: 4; /* Fica acima de elementos padrão */
   }
-
 
 }
