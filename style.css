@@ -222,7 +222,7 @@ body.home h1 {
 #project-preview video {
   width: 100%; /* Preencher largura do container */
   height: 100%; /* Preencher altura do container */
-  object-fit: cover; /* Cobre toda a área, mantendo proporções */
+  object-fit: cover; /* Cobre toda a área, mantém proporções */
 }
 
 
@@ -271,7 +271,7 @@ body.home h1 {
 }
 
 .project-detail .description {
-  font-size: 1.rem; /* Tamanho da fonte (tem um pequeno typo, mas não altero) */
+  font-size: 1rem; /* Tamanho da fonte */
   line-height: 1.3; /* Altura da linha */
   margin-bottom: 0rem; /* Sem margem inferior */
 }
@@ -294,7 +294,7 @@ body.home h1 {
 .work-image-container {
   position: fixed; /* Fixo na viewport */
   top: 62px; /* Distância do topo */
-  bottom: 3px;
+  bottom: 3px; /* Distância de baixo*/
   right: 18px; /* Distância da direita */
   width: 70vw; /* Largura relativa à viewport */
   height: 100vh; /* Altura da viewport */
@@ -315,18 +315,12 @@ body.home h1 {
   display: block; /* Display em bloco */
 }
 
-/* Comentado: efeito hover para imagem do trabalho */
-/* .work-image:hover {
-  transform: scale(1.01) rotate(0.5deg);
-} */
-
-
 /* PÁGINA ABOUT */
 /* Página About (Sobre mim) */
 .intro-text {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-  text-align: center;
-  font-size: 2.5rem;
+  text-align: center;/* Texto Centrado */
+  font-size: 2.5rem;/* Tamanho fonte */
   letter-spacing: -0.3px; /* Espaçamento negativo entre letras */
   line-height: 45px; /* Altura da linha */
   max-width: 2000px;
@@ -379,7 +373,7 @@ body, html {
   border: 2px solid #2D262D; /* borda sólida da mesma cor do fundo */
   box-shadow: none;           /* remove sombras */
   background-image: none;     /* remove possíveis gradientes */
-  outline: none; 
+  outline: none; /* Sem Outline */
   cursor: pointer; /* cursor de mãozinha */
 }
 
@@ -390,23 +384,24 @@ body, html {
 
 /* Camada fixa para a pilha de fotos */
 .photo-stack {
-  display: block;
-  position: fixed;
-  inset: 0; /* topo, direita, baixo, esquerda = 0 */
-  width: 100vw;
-  height: 105vh;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: block; /* Define como elemento de bloco */
+  position: fixed; /* Fixa ao ecrã */
+  inset: 0; /* Ocupa todo o ecrã */
+  width: 100vw; /* 100% da largura da janela do browser */
+  height: 105vh; /* 105% da altura da janela (ligeiramente mais que o ecrã) */
+  z-index: 2; /* Fica acima de outros elementos com z-index menor */
+  display: flex; /* Usa layout flexível (sobrepõe o display: block anterior) */
+  align-items: center; /* Alinha o conteúdo verticalmente ao centro */
+  justify-content: center; /* Alinha o conteúdo horizontalmente ao centro */
 }
+
 
 /* Composição das fotos */
 .composition {
-  position: relative;
-  width: 1150px;
-  height: 700px;
-  max-width: 95vw; /* Limita a largura máxima */
+  position: relative; /* Permite posicionar elementos filhos de forma absoluta */
+  width: 1150px; /* Largura base da composição */
+  height: 700px; /* Altura da composição */
+  max-width: 95vw; /* Limita a largura para não ultrapassar 95% da janela do browser */
 }
 
 /* Foto */
@@ -526,6 +521,11 @@ body, html {
     background: transparent; /* Fundo transparente */
     width: 100%; /* Largura total */
   }
+  /* Efeito hover para o texto BaleteTypo */
+  .BaleteTypo:hover {
+  font-family:'BaleteSemibold', serif; /* Fonte igual */
+  font-weight: bold; /* Peso negrito */
+  }
 
   .work-image-container {
     position: relative; /* Posicionamento relativo para posicionar filhos */
@@ -594,7 +594,7 @@ body, html {
     font-size: 18px; /* Tamanho da fonte */
     padding: 1.5rem; /* Espaçamento interno */
     z-index: 10; /* Fica acima de outros elementos */
-    background-color: ;
+
   }
 
   .photo-mobileabout {
@@ -605,15 +605,15 @@ body, html {
   }
   
   .photo-mobileabout img {
-    position: static;
-    left: auto;
-    top: auto;
-    width: 100%;
-    max-width: 390px;
-    height: auto;
-    margin-top: 9px; /* sua margem */
+    position: static; /* Usa a posição padrão no fluxo do layout */
+    left: auto; /* Valor padrão */
+    top: auto; /* Valor padrão */
+    width: 100%; /* Ocupa 100% da largura do elemento pai */
+    max-width: 390px; /* Nunca ultrapassa 390px de largura */
+    height: auto; /* Ajusta a altura automaticamente com base na largura */
+    margin-top: 9px; /* Espaço de 9px acima da imagem */
   }
-
+  
   .photo-stack {
     display: none; /* Esconde no mobile */
   }
@@ -629,15 +629,15 @@ body, html {
   }
 
   .intro-text {
-    font-family: 'Alte Haas Grotesk', Arial, sans-serif;
-    text-align: center;
-    font-size: 1.4rem;
+    font-family: 'Alte Haas Grotesk', Arial, sans-serif; /* Fonte usada no texto */
+    text-align: center; /* Texto alinhado ao centro */
+    font-size: 1.4rem; /* Tamanho da fonte */
     letter-spacing: -0.3px; /* Espaçamento negativo entre letras */
     line-height: 28px; /* Altura da linha */
-    max-width: 2000px;
-    margin: 46px;
-    margin-top: 100px;
-  }
+    max-width: 2000px; /* Largura máxima do bloco de texto */
+    margin: 46px; /* Margem em todos os lados */
+    margin-top: 100px; /* Margem superior específica */
+  }  
 }
 
 /* Escala e posicionamento da composição em telas até 769px */
@@ -657,6 +657,7 @@ body, html {
     overflow: hidden; /* Remove scroll interno */
     z-index: 4; /* Fica acima de elementos padrão */
   }
+}
 
 /* Contactos do about responsivos */
 @media (min-width: 769px) {
