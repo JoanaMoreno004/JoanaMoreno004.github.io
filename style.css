@@ -11,6 +11,7 @@
   Docente: Marco Heleno
 ------------------------------*/
 
+/* FONTES */
 /* Fonts - definição das fontes usadas no site */
 @font-face {
   font-family: 'AlteHaasGrotesk'; /* Nome da fonte Balete Semibold */
@@ -45,6 +46,25 @@
 }
 
 
+/* COINTAINER */
+/* Container principal que agrupa header, main e footer */
+.container {
+  width: 100%; /* Largura total */
+  min-height: 100vh; /* Altura mínima igual à altura da viewport */
+  display: flex; /* Usar flexbox para layout */
+  flex-direction: column; /* Layout em coluna */
+}
+
+
+/* GERAL */
+/* Estilo do main */
+main {
+  flex: 1; /* Expande para preencher espaço disponível */
+  padding: 0.5rem; /* Espaçamento interno */
+  box-sizing: border-box; /* Inclui padding na largura total */
+  margin-top: 2.4rem; /* Espaço acima */
+}
+
 /* Estilos base do body */
 body {
   background-color:#f3f3e5; /* Cor de fundo do body */
@@ -58,22 +78,7 @@ body {
   cursor: url('cursor/mycursor.svg'), auto; /* Aplica cursor personalizado */
 }
 
-/* Container principal que agrupa header, main e footer */
-.container {
-  width: 100%; /* Largura total */
-  min-height: 100vh; /* Altura mínima igual à altura da viewport */
-  display: flex; /* Usar flexbox para layout */
-  flex-direction: column; /* Layout em coluna */
-}
-
-/* Estilo do main */
-main {
-  flex: 1; /* Expande para preencher espaço disponível */
-  padding: 0.5rem; /* Espaçamento interno */
-  box-sizing: border-box; /* Inclui padding na largura total */
-  margin-top: 2.4rem; /* Espaço acima */
-}
-
+/* HEADER */
 /* Estilo do header fixo */
 header {
   width: 100%; /* Largura total */
@@ -89,6 +94,7 @@ header {
   background:#f3f3e5; /* Cor de fundo */
 }
 
+/* LINKS */
 /* Links do header com efeito hover */
 header a:hover{
   text-decoration: underline; /* Sublinhado ao passar o rato */
@@ -113,6 +119,8 @@ a:focus {
   text-decoration: none; /* Continua sem sublinhado ao hover ou foco */
 }
 
+
+/* HOMEPAGE */
 /* Estilos específicos para a homepage */
 body.home {
   overflow: hidden; /* Esconde scroll */
@@ -124,21 +132,23 @@ body.home header {
 }
 
 body.home h1 {
-  margin-top: -0.3rem; /* Margem superior negativa para ajustar posição */
-  font-size: 60px; /* Tamanho da fonte maior */
+  margin-top: -0.1rem; /* Margem superior negativa para ajustar posição */
+  font-size: 62.9px; /* Tamanho da fonte maior */
   font-weight: 200; /* Peso da fonte leve */
-  letter-spacing: -2.5px; /* Espaçamento negativo entre letras */
-  line-height: 1; /* Altura da linha */
+  letter-spacing: -1.4px; /* Espaçamento negativo entre letras */
+  line-height: 0.96; /* Altura da linha */
 }
 
 /* Classe para tipografia Joana */
 .JoanaTypo {
   font-family: 'BaleteSemiBoldItalic', serif; /* Fonte personalizada Joana */
-  font-size: 65px; /* Tamanho grande */
+  font-size: 67px; /* Tamanho grande */
   font-weight: normal; /* Peso normal */
-  letter-spacing: 2px; /* Espaçamento entre letras */
+  letter-spacing: 1.2px; /* Espaçamento entre letras */
 }
 
+
+/* PÁGINA WORK */
 /* Seção Work (trabalhos/projetos) */
 .work-section {
   position: relative; /* Posicionamento relativo para filhos */
@@ -151,7 +161,7 @@ body.home h1 {
   margin-top: 55px; /* Espaço acima */
   display: flex; /* Layout flexível */
   flex-direction: column; /* Organiza em coluna */
-  gap: 1.8rem; /* Espaçamento vertical entre projetos */
+  gap: 2.2rem; /* Espaçamento vertical entre projetos */
 }
 
 .project {
@@ -214,6 +224,8 @@ body.home h1 {
   object-fit: cover; /* Cobre toda a área, mantendo proporções */
 }
 
+
+/* PÁGINA DE DETALHES DO WORK */
 /* Container principal da página de detalhe do projeto */
 .project-detail-main {
   width: 100%; /* Largura total */
@@ -306,10 +318,12 @@ body.home h1 {
   transform: scale(1.01) rotate(0.5deg);
 } */
 
+
+/* PÁGINA ABOUT */
 /* Página About (Sobre mim) */
 .intro-text {
   font-family: 'Alte Haas Grotesk', Arial, sans-serif; /* Fonte */
-  margin-top: -0.3rem; /* Margem negativa no topo */
+  margin-top: -0.2rem; /* Margem negativa no topo */
   font-size: 56px; /* Tamanho grande */
   font-weight: 200; /* Peso leve */
   letter-spacing: -1.3px; /* Espaçamento negativo */
@@ -332,15 +346,6 @@ body, html {
   z-index: 10; /* Sobreposição */
 }
 
-
-.contacts a:not(.cv-link) {
-  /* Estilos para links que não sejam .cv-link (sem estilos específicos aqui) */
-}
-
-
-.contacts .cv-link {
-  /* Estilos para o link do CV (sem estilos específicos aqui) */
-}
 
 /* Efeito hover para links em contatos */
 .contacts a:hover {
@@ -392,7 +397,9 @@ body, html {
   max-width: 400px; /* Limita a largura máxima da imagem */
 }
 
-/* Work */
+/* RESPONSIVE PARA TELEMÓVEL */
+
+/* PÁGINA WORK */
 /* Estilos para telas maiores que 768px */
 @media (min-width: 768px) {
   .project-preview-mobile {
@@ -477,7 +484,7 @@ body, html {
     line-height: 1.2; /* Espaçamento entre linhas */
   }
 
-  /* Página de detalhe do projeto */
+  /* PÁGINA DE DETALHE DO WORK */
   .project-detail-main {
     display: flex; /* Flex container */
     flex-direction: column; /* Itens em coluna */
@@ -515,7 +522,7 @@ body, html {
   }
 
 
-  /* Homepage */
+  /* HOMEPAGE */
   body.home {
     overflow: auto; /* Permite scroll no telemóvel */
     padding: 0rem; /* Sem padding */
@@ -532,11 +539,11 @@ body, html {
   .JoanaTypo {
     font-family: 'BaleteSemibold', serif; /* Fonte Balete Semibold */
     font-size: 33px; /* Tamanho da fonte */
-    line-height: 1.3; /* Espaçamento entre linhas */
-    letter-spacing: 0.5px; /* Espaçamento entre letras */
+    line-height: 1.2; /* Espaçamento entre linhas */
+    letter-spacing: 0.2px; /* Espaçamento entre letras */
   }
 
-  /* About */
+  /* ABOUT */
   body.about {
     overflow: auto; /* Permite scroll no mobile */
     padding: 1rem; /* Espaço interno */
@@ -621,4 +628,12 @@ body, html {
     z-index: 4; /* Fica acima de elementos padrão */
   }
 
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .contacts {
+    flex-wrap: wrap; /* Permite quebrar linha se não couber */
+    row-gap: 0.5rem; /* controla o espaço vertical entre linhas */
+  }
 }
