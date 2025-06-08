@@ -471,6 +471,13 @@ body, html {
     line-height: 1.1; /* Espaçamento entre linhas */
   }
 
+  /* Efeito hover para o texto BaleteTypo */
+  .BaleteTypo:hover {
+  font-family: 'BaleteSemibold', serif; /* Fonte em itálico negrito */
+  font-weight: bold; /* Peso negrito */
+  
+  }
+
   .project-preview-mobile {
     width: 100%; /* Largura total */
     height: 300px; /* Altura fixa */
@@ -590,41 +597,40 @@ body, html {
   /* Estilos específicos para fotos em telas pequenas */
   @media (max-width: 768px) {
     .photo-stack {
-      display: flex; /* Flex container */
-      margin-top: 2rem; /* Margem superior */
-      touch-action: none !important;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      min-height: unset; /* Remove o min-height se usares height */
-      z-index: 10; /* ou outro valor alto, se precisares */
-      touch-action: none !important;
+      position: relative;
+      width: 100%;       /* largura responsiva */
+      max-width: 450px;  /* tamanho máximo para celular */
+      height: 400px;     /* mantêm a altura */
+      margin: 0 auto;
       
     }
   
-    .composition {
-      width: 1400px;
-      height: 900px;
-      max-width: 98vw;
-      margin-top: 6000px;
-      margin-left: 40px;
+    .photo-stack .composition .photo {
+      position: absolute;
+      top: 0;            /* ajusta para dentro do container */
+      left: 0;
+      width: 150px;      /* tamanho menor, proporcional ao container */
+      height: 150px;
     }
   
-    .photo img {
-      max-width: 100%; /* Largura máxima da imagem */
-      height: auto; /* Altura automática */
+    /* Ajusta as posições das fotos para ficarem visíveis e organizadas */
+    .photo-stack .composition .photo:nth-child(1) {
+      transform: translate(-10px, 1200px) rotate(-6deg) scale(3.5)!important;
+    }
+  
+    .photo-stack .composition .photo:nth-child(2) {
+      transform: translate(660px, 1800px) rotate(20deg) scale(3.7)!important;
+    }
+  
+    .photo-stack .composition .photo:nth-child(3) {
+      transform: translate(220px, 1700px) rotate(-2deg) scale(3.5)!important;
+    }
+  
+    .photo-stack .composition .photo:nth-child(4) {
+      transform: translate(520px, 1200px) rotate(5deg) scale(3)!important;
     }
   }
-
-  /* Reforça para todas imagens dentro de .photo */
-  .photo img {
-    max-width: 100%; /* Largura máxima da imagem */
-    height: auto; /* Altura automática */
-  }
-}
-
+  
 /* Escala e posicionamento da composição em telas até 900px */
 @media (max-width: 900px) {
   .composition {
