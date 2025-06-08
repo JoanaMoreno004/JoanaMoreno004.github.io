@@ -158,10 +158,11 @@ body.home h1 {
 
 .projects {
   width: 100%; /* Largura total */
-  margin-top: 55px; /* Espaço acima */
+  margin-top: 27px; /* Espaço acima */
+  margin-left: 0px;
   display: flex; /* Layout flexível */
   flex-direction: column; /* Organiza em coluna */
-  gap: 2.2rem; /* Espaçamento vertical entre projetos */
+  gap: 1.7rem; /* Espaçamento vertical entre projetos */
 }
 
 .project {
@@ -176,7 +177,7 @@ body.home h1 {
 }
 
 .project-row .BaleteTypo {
-  font-size: 69px; /* Tamanho da fonte */
+  font-size: 67px; /* Tamanho da fonte */
   font-family: 'BaleteSemibold', serif; /* Fonte Balete Semibold */
   line-height: 0.3; /* Altura da linha compacta */
   white-space: nowrap; /* Não quebra linha */
@@ -201,9 +202,9 @@ body.home h1 {
   display: none; /* Inicialmente escondido */
   position: fixed; /* Posicionado fixamente na viewport */
   top: 88px; /* Distância do topo */
-  right: 60px; /* Distância da direita */
-  width: 520px; /* Largura fixa */
-  height: 610px; /* Altura fixa */
+  right: 80px; /* Distância da direita */
+  width: 580px; /* Largura fixa */
+  height: 630px; /* Altura fixa */
   background: #fff; /* Fundo branco */
   overflow: hidden; /* Esconde overflow */
   z-index: 1000; /* Sobreposição alta */
@@ -231,7 +232,7 @@ body.home h1 {
   width: 100%; /* Largura total */
   box-sizing: border-box; /* Inclui padding e bordas */
   margin-left: 1px; /* Margem à esquerda pequena */
-  margin-top: 5rem; /* Espaço no topo para header */
+  margin-top: 2rem; /* Espaço no topo para header */
 }
 
 /* Detalhes do projeto */
@@ -292,13 +293,14 @@ body.home h1 {
 /* Container para as imagens do projeto */
 .work-image-container {
   position: fixed; /* Fixo na viewport */
-  top: 35px; /* Distância do topo */
+  top: 62px; /* Distância do topo */
+  bottom: 3px;
   right: 18px; /* Distância da direita */
   width: 70vw; /* Largura relativa à viewport */
   height: 100vh; /* Altura da viewport */
   overflow-y: auto; /* Scroll vertical automático */
   background: transparent; /* Fundo transparente */
-  padding: 0rem; /* Sem padding */
+  padding: 1.2rem; /* Sem padding */
   box-sizing: border-box; /* Inclui padding e bordas */
   display: flex; /* Flexbox */
   flex-direction: column; /* Coluna */
@@ -309,7 +311,7 @@ body.home h1 {
 .work-image {
   width: 100%; /* Largura total */
   max-width: none; /* Sem limite máximo */
-  margin-bottom: 4rem; /* Espaço abaixo da imagem */
+  margin-bottom: 5rem; /* Espaço abaixo da imagem */
   display: block; /* Display em bloco */
 }
 
@@ -322,12 +324,14 @@ body.home h1 {
 /* PÁGINA ABOUT */
 /* Página About (Sobre mim) */
 .intro-text {
-  font-family: 'Alte Haas Grotesk', Arial, sans-serif; /* Fonte */
-  margin-top: -0.2rem; /* Margem negativa no topo */
-  font-size: 56px; /* Tamanho grande */
-  font-weight: 200; /* Peso leve */
-  letter-spacing: -1.3px; /* Espaçamento negativo */
-  line-height: 1; /* Altura da linha */
+  font-family: 'Alte Haas Grotesk', Arial, sans-serif;
+  text-align: center;
+  font-size: 2.5rem;
+  letter-spacing: -0.3px; /* Espaçamento negativo entre letras */
+  line-height: 45px; /* Altura da linha */
+  max-width: 2000px;
+  margin: 160px;
+  margin-top: 180px;
 }
 
 /* Garantir altura total para body e html */
@@ -338,10 +342,10 @@ body, html {
 /* Contatos fixos no ecrã */
 .contacts {
   position: fixed; /* Fixo na viewport */
-  padding: 0.8rem; /* Padding interno */
+  padding: 0.6rem; /* Padding interno */
   bottom: 4px; /* Distância do fundo */
   display: flex; /* Flexbox */
-  gap: 9rem; /* Espaçamento entre contactos */
+  gap: 7rem; /* Espaçamento entre contactos */
   font-size: 24px; /* Tamanho do texto */
   z-index: 10; /* Sobreposição */
 }
@@ -361,7 +365,7 @@ body, html {
 /* Botão escondido inicialmente */
 #email_container button {
   position: absolute; /* Posicionado absolutamente */
-  top: -10px; /* Acima do container */
+  top: -12px; /* Acima do container */
   left: 9%; /* Pequena distância da esquerda */
   transform: none;
   width: 100px; 
@@ -386,10 +390,11 @@ body, html {
 
 /* Camada fixa para a pilha de fotos */
 .photo-stack {
+  display: block;
   position: fixed;
   inset: 0; /* topo, direita, baixo, esquerda = 0 */
   width: 100vw;
-  height: 100vh;
+  height: 105vh;
   z-index: 2;
   display: flex;
   align-items: center;
@@ -471,12 +476,6 @@ body, html {
     line-height: 1.1; /* Espaçamento entre linhas */
   }
 
-  /* Efeito hover para o texto BaleteTypo */
-  .BaleteTypo:hover {
-  font-family: 'BaleteSemibold', serif; /* Fonte em itálico negrito */
-  font-weight: bold; /* Peso negrito */
-  
-  }
 
   .project-preview-mobile {
     width: 100%; /* Largura total */
@@ -575,10 +574,13 @@ body, html {
   }
 
   .intro-text {
-    font-size: 23px; /* Reduz o tamanho do texto */
-    letter-spacing: -0.15px; /* Espaçamento entre letras */
-    line-height: 1.1; /* Espaçamento entre linhas */
-    margin-top: 1px; /* Margem superior pequena */
+    font-size: 20px; /* Reduz o tamanho do texto */
+    letter-spacing: -0.1px; /* Espaçamento entre letras */
+    line-height: 0.1; /* Espaçamento entre linhas */
+    margin-top: 20px; /* Margem superior pequena */
+    line-height: 1.3;
+    max-width: 1000px;
+    margin: 30px;
   }
 
   .contacts {
@@ -592,50 +594,49 @@ body, html {
     font-size: 18px; /* Tamanho da fonte */
     padding: 1.5rem; /* Espaçamento interno */
     z-index: 10; /* Fica acima de outros elementos */
+    background-color: ;
   }
 
-  /* Estilos específicos para fotos em telas pequenas */
-  @media (max-width: 768px) {
-    .photo-stack {
-      position: relative;
-      width: 100%;       /* largura responsiva */
-      max-width: 450px;  /* tamanho máximo para celular */
-      height: 400px;     /* mantêm a altura */
-      margin: 0 auto;
-      
-    }
-  
-    .photo-stack .composition .photo {
-      position: absolute;
-      top: 0;            /* ajusta para dentro do container */
-      left: 0;
-      width: 150px;      /* tamanho menor, proporcional ao container */
-      height: 150px;
-    }
-  
-    /* Ajusta as posições das fotos para ficarem visíveis e organizadas */
-    .photo-stack .composition .photo:nth-child(1) {
-      transform: translate(-10px, 1200px) rotate(-6deg) scale(3.5)!important;
-    }
-  
-    .photo-stack .composition .photo:nth-child(2) {
-      transform: translate(660px, 1800px) rotate(20deg) scale(3.7)!important;
-    }
-  
-    .photo-stack .composition .photo:nth-child(3) {
-      transform: translate(220px, 1700px) rotate(-2deg) scale(3.5)!important;
-    }
-  
-    .photo-stack .composition .photo:nth-child(4) {
-      transform: translate(520px, 1200px) rotate(5deg) scale(3)!important;
-    }
+  .photo-mobileabout {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinha verticalmente */
+    height: 100%; /* ou um valor fixo, tipo 400px */
   }
   
+  .photo-mobileabout img {
+    position: static;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 390px;
+    height: auto;
+    margin-top: 9px; /* sua margem */
+  }
+
+  .photo-stack {
+    display: none; /* Esconde no mobile */
+  }
+
+}
+
+
 /* Escala e posicionamento da composição em telas até 900px */
 @media (max-width: 900px) {
   .composition {
     transform: scale(0.8); /* Reduz escala */
     margin: 110px 10px 20px -260px; /* Margem personalizada */
+  }
+
+  .intro-text {
+    font-family: 'Alte Haas Grotesk', Arial, sans-serif;
+    text-align: center;
+    font-size: 1.4rem;
+    letter-spacing: -0.3px; /* Espaçamento negativo entre letras */
+    line-height: 28px; /* Altura da linha */
+    max-width: 2000px;
+    margin: 46px;
+    margin-top: 100px;
   }
 }
 
@@ -651,7 +652,7 @@ body, html {
 @media (min-width: 769px) {
   .project-detail-main {
     position: fixed; /* Fixa o container */
-    top: 0px; /* No topo da tela */
+    top: 30px; /* No topo da tela */
     width: 80%; /* Ocupa 80% da largura */
     overflow: hidden; /* Remove scroll interno */
     z-index: 4; /* Fica acima de elementos padrão */
@@ -665,7 +666,7 @@ body, html {
   }
 
   #email_container button {
-    top: -20px; /* Acima do container */
+    top: -28px; /* Acima do container */
     left: 1.5%; /* Pequena distância da esquerda */
     display: none; /* aparece só com hover */
   }

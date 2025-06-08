@@ -47,10 +47,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const photos = Array.from(photoStack.querySelectorAll('.photo'));
 
     const desktopPositions = [
-      { x: 85,  y: 90,  rotation: -10, scale: 0.8 },
-      { x: 655, y: 160, rotation: -1,  scale: 0.85 },
-      { x: 310, y: 250, rotation: 7,   scale: 0.85 },
-      { x: 430, y: -40, rotation: 5,   scale: 0.75 },
+      { x: 78,  y: 70,  rotation: -10, scale: 0.71 },
+      { x: 675, y: 160, rotation: 7,  scale: 0.73 },
+      { x: 330, y: 240, rotation: -2,   scale: 0.73 },
+      { x: 420, y: -30, rotation: 5,   scale: 0.71},
     ];
 
     let positionsToUse = desktopPositions;
