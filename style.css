@@ -338,8 +338,8 @@ body, html {
 /* Contatos fixos no ecrã */
 .contacts {
   position: fixed; /* Fixo na viewport */
-  padding: 1.2rem; /* Padding interno */
-  bottom: 2px; /* Distância do fundo */
+  padding: 0.8rem; /* Padding interno */
+  bottom: 4px; /* Distância do fundo */
   display: flex; /* Flexbox */
   gap: 9rem; /* Espaçamento entre contactos */
   font-size: 24px; /* Tamanho do texto */
@@ -353,17 +353,35 @@ body, html {
 }
 
 /* Container para o email com botão */
-#email_container 
-{
+#email_container {
   display: inline-block; /* Display inline-block para alinhar */
+  
 }
 
 /* Botão escondido inicialmente */
 #email_container button {
   position: absolute; /* Posicionado absolutamente */
-  top: -15px; /* Acima do container */
-  left: 2.5%; /* Pequena distância da esquerda */
+  top: -10px; /* Acima do container */
+  left: 9%; /* Pequena distância da esquerda */
+  transform: none;
   width: 100px; 
+  height: 35px; /* aumenta a altura */
+  display: none; /* aparece só com hover */
+
+/* Estilo do botão */
+  background-color: #2D262D; /* muda a cor de fundo*/
+  color: #f1ebf6; /* cor do texto */
+  border-radius: 0px;
+  border: 2px solid #2D262D; /* borda sólida da mesma cor do fundo */
+  box-shadow: none;           /* remove sombras */
+  background-image: none;     /* remove possíveis gradientes */
+  outline: none; 
+  cursor: pointer; /* cursor de mãozinha */
+}
+
+#email_container button:hover {
+  background-color: #B6B1EF; /* verde escuro */
+  border-color: #B6B1EF; /* borda verde escuro */
 }
 
 /* Camada fixa para a pilha de fotos */
@@ -628,12 +646,16 @@ body, html {
     z-index: 4; /* Fica acima de elementos padrão */
   }
 
-}
-
-/* Desktop */
+/* Contactos do about responsivos */
 @media (min-width: 769px) {
   .contacts {
-    flex-wrap: wrap; /* Permite quebrar linha se não couber */
+    flex-wrap: wrap; /* Permite separar a linha se não couber */
     row-gap: 0.5rem; /* controla o espaço vertical entre linhas */
+  }
+
+  #email_container button {
+    top: -20px; /* Acima do container */
+    left: 1.5%; /* Pequena distância da esquerda */
+    display: none; /* aparece só com hover */
   }
 }
