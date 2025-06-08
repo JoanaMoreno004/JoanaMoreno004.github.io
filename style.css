@@ -462,7 +462,7 @@ body, html {
   .project-row {
     flex-direction: column; /* Itens em coluna */
     height: auto; /* Altura automática */
-    gap: 0.5rem; /* Espaçamento entre elementos */
+    gap: 0.1rem; /* Espaçamento entre elementos */
     margin-bottom: 0; /* Remove margem inferior */
   }
 
@@ -516,7 +516,7 @@ body, html {
     flex-direction: column; /* Itens em coluna */
     align-items: flex-start; /* Alinha à esquerda */
     text-align: left; /* Texto alinhado à esquerda */
-    gap: 1.5rem; /* Espaçamento entre elementos */
+    gap: 1.4rem; /* Espaçamento entre elementos */
     background: transparent; /* Fundo transparente */
     width: 100%; /* Largura total */
   }
@@ -590,21 +590,26 @@ body, html {
   /* Estilos específicos para fotos em telas pequenas */
   @media (max-width: 768px) {
     .photo-stack {
-      position: relative; /* Posicionamento relativo */
-      width: 100%; /* Largura total */
-      height: auto; /* Altura automática */
       display: flex; /* Flex container */
-      justify-content: center; /* Centraliza horizontalmente */
-      align-items: center; /* Centraliza verticalmente */
       margin-top: 2rem; /* Margem superior */
+      touch-action: none !important;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      min-height: unset; /* Remove o min-height se usares height */
+      z-index: 10; /* ou outro valor alto, se precisares */
+      touch-action: none !important;
+      
     }
   
     .composition {
-      width: 100%; /* Largura total */
-      max-width: 90vw; /* Máximo 90% da largura da viewport */
-      height: auto; /* Altura automática */
-      transform: none; /* Remove transformações */
-      margin: 0 auto; /* Centraliza horizontalmente */
+      width: 1400px;
+      height: 900px;
+      max-width: 98vw;
+      margin-top: 6000px;
+      margin-left: 40px;
     }
   
     .photo img {

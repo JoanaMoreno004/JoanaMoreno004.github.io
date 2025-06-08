@@ -54,11 +54,12 @@ document.addEventListener('DOMContentLoaded', function() {
     ];
 
     const mobilePositions = [
-      { x: 100,  y: 500,  rotation: -8, scale: 2 },
-      { x: 600,  y: 2100, rotation: 7,  scale: 2 },
-      { x: 200, y: 1600,  rotation: -4, scale: 2 },
-      { x: 500,  y: 1100, rotation: 5,  scale: 2 },
+      { x: 100,   y: 6000,  rotation: -8, scale: 2 },
+      { x: 400,  y: 6000,  rotation: 7,  scale: 2 },
+      { x: -40,  y: 6000,  rotation: -4, scale: 2},
+      { x: 300,  y: 6000,  rotation: 5,  scale: 2 },
     ];
+    
 
     let positionsToUse = window.innerWidth <= 768 ? mobilePositions : desktopPositions;
 
@@ -92,11 +93,14 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     window.addEventListener('wheel', function(e) {
-      scrollPosition += e.deltaY;
+      // Usa multiplicador maior só em mobile (até 768px de largura)
+      let multiplier = window.innerWidth <= 768 ? 4 : 1;
+      scrollPosition += e.deltaY * multiplier;
       scrollPosition = Math.max(minScroll, Math.min(maxScroll, scrollPosition));
       updatePhotosOnScroll();
       e.preventDefault();
     }, { passive: false });
+    
 
     window.addEventListener('keydown', function(e) {
       if (e.key === 'ArrowDown' || e.key === 'PageDown') {
@@ -108,12 +112,43 @@ document.addEventListener('DOMContentLoaded', function() {
       updatePhotosOnScroll();
     });
 
+    // --- TOUCH para MOBILE (AGORA AQUI DENTRO!) ---
+    let touchStartY = 0;
+    let lastTouchY = 0;
+    let isTouching = false;
+
+    photoStack.addEventListener('touchstart', function(e) {
+      if (e.touches.length === 1) {
+        isTouching = true;
+        touchStartY = e.touches[0].clientY;
+        lastTouchY = touchStartY;
+        document.body.style.overflow = 'hidden'; // BLOQUEIA O SCROLL DA PÁGINA!
+      }
+    });
+
+    photoStack.addEventListener('touchmove', function(e) {
+      if (!isTouching) return;
+      const touchY = e.touches[0].clientY;
+      const deltaY = touchY - lastTouchY;
+      lastTouchY = touchY;
+    
+      // Multiplicador maior para o scroll ser mais rápido no mobile
+      scrollPosition += deltaY * 4;
+      scrollPosition = Math.max(minScroll, Math.min(maxScroll, scrollPosition));
+      updatePhotosOnScroll();
+    
+      e.preventDefault();
+    }, { passive: false });
+    
+
+    photoStack.addEventListener('touchend', function(e) {
+      isTouching = false;
+      document.body.style.overflow = ''; // VOLTA A PERMITIR O SCROLL DA PÁGINA
+    });
+
     updatePhotosOnScroll();
   }
 });
-
-
-
 // ABOUT COPY EMAIL BOTÃO //
 let email_container_element, email_a_element, email_button_element;
 let temp_input;
