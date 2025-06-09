@@ -147,7 +147,25 @@ body.home h1 {
   letter-spacing: 1.2px; /* Espaçamento entre letras */
 }
 
+.illustration-background {
+  position: fixed;
+  top: 60px;
+  left: -100px;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* garante que fica atrás de tudo */
+}
 
+.illustration-background img {
+  width: 115vw; /* <--- AJUSTA O TAMANHO AQUI */
+  height: auto;
+
+  max-height: 100vh;
+  object-fit: contain;
+}
 /* PÁGINA WORK */
 /* Seção Work (trabalhos/projetos) */
 .work-section {
@@ -437,6 +455,24 @@ body, html {
     gap: 31px; /* Espaçamento entre links */
   }
 
+  illustration-background {
+  position: fixed;
+  top: 90px;
+  left: -100px;
+  width: 100vw;
+  height: 100vh;
+  background-size: 100%;
+  background-position: right;
+  background-repeat: no-repeat;
+  z-index: -1; /* garante que fica atrás de tudo */
+}
+
+.illustration-background img {
+  width: 350vw; /* <--- AJUSTA O TAMANHO AQUI */
+  height: auto;
+  max-height: 100vh;
+  object-fit: contain;
+}
   /* Esconder o preview de desktop no mobile */
   #project-preview {
     display: none !important; /* Força esconder mesmo se outro estilo tentar mostrar */
