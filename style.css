@@ -159,7 +159,7 @@ body.home h1 {
 .projects {
   width: 100%; /* Largura total */
   margin-top: 50px; /* Espaço acima */
-  margin-left: 20px;
+  margin-left: px;
   display: flex; /* Layout flexível */
   flex-direction: column; /* Organiza em coluna */
   gap: 2rem; /* Espaçamento vertical entre projetos */

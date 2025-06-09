@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let positionsToUse = desktopPositions;
 
     const revealDistance = 400; // Distância do scroll para revelar cada foto
-    let scrollPosition = revealDistance * photos.length; // Posição inicial do scroll
+    let scrollPosition = 0; // Posição inicial do scroll
     const minScroll = 0; // Limite mínimo do scroll
     const maxScroll = revealDistance * photos.length; // Limite máximo do scroll
 
@@ -224,3 +224,4 @@ function showEmailButton() {
 function hideEmailButton() {
   email_button_element.hide();
 }
+
