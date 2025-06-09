@@ -158,11 +158,11 @@ body.home h1 {
 
 .projects {
   width: 100%; /* Largura total */
-  margin-top: 27px; /* Espaço acima */
-  margin-left: 0px;
+  margin-top: 50px; /* Espaço acima */
+  margin-left: 20px;
   display: flex; /* Layout flexível */
   flex-direction: column; /* Organiza em coluna */
-  gap: 1.7rem; /* Espaçamento vertical entre projetos */
+  gap: 2rem; /* Espaçamento vertical entre projetos */
 }
 
 .project {
@@ -201,11 +201,11 @@ body.home h1 {
 #project-preview {
   display: none; /* Inicialmente escondido */
   position: fixed; /* Posicionado fixamente na viewport */
-  top: 88px; /* Distância do topo */
-  right: 80px; /* Distância da direita */
-  width: 580px; /* Largura fixa */
-  height: 630px; /* Altura fixa */
-  background: #fff; /* Fundo branco */
+  top: 83px; /* Distância do topo */
+  right: -15px; /* Distância da direita */
+  width: 620px; /* Largura fixa */
+  height: 770px; /* Altura fixa */
+
   overflow: hidden; /* Esconde overflow */
   z-index: 1000; /* Sobreposição alta */
   pointer-events: none; /* Não permite interações */
@@ -220,8 +220,8 @@ body.home h1 {
 
 #project-preview img,
 #project-preview video {
-  width: 100%; /* Preencher largura do container */
-  height: 100%; /* Preencher altura do container */
+  width: 80%; /* Preencher largura do container */
+  height: 80%; /* Preencher altura do container */
   object-fit: cover; /* Cobre toda a área, mantém proporções */
 }
 
@@ -474,7 +474,7 @@ body, html {
 
   .project-preview-mobile {
     width: 100%; /* Largura total */
-    height: 300px; /* Altura fixa */
+    height: 400px; /* Altura fixa */
     background-color: #ddd; /* Cor de fundo cinza claro */
     border-radius: 0px; /* Sem bordas arredondadas */
     overflow: hidden; /* Esconde conteúdo que ultrapassa o container */
@@ -529,12 +529,11 @@ body, html {
 
   .work-image-container {
     position: relative; /* Posicionamento relativo para posicionar filhos */
-    width: 100%; /* Largura total */
+    width: 104%; /* Largura total */
     height: auto; /* Altura automática */
-    left: 9px; /* Desloca para direita */
+    padding-left: 30px; /* Desloca para direita */
     top: 12px; /* Desloca para baixo */
-    padding-right: 1rem; /* Espaço à direita */
-    min-height: 200px; /* Garante altura mínima para não colapsar */
+    min-height: 210px; /* Garante altura mínima para não colapsar */
   }
   
 
